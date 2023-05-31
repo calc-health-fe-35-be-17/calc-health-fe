@@ -5,6 +5,7 @@ import './Register.css'
 function Register(){
     return(
         <>
+            <h1>Welcome to Calc Health</h1>
             <div id='form'>
                 <Form>
                     <Form.Group>

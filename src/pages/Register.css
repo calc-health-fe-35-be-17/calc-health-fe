@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
+
+body{
+    padding: 50px 50px;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 72px;
+    color: #006D75;
+}
+
+#form{
+    display: flex;
+    justify-content: center;
+}
+
+Form{
+    position: absolute;
+    width: 836px;
+    height: 1078px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    padding: 50px 50px;
+    /* border: 5px solid black; */
+}
