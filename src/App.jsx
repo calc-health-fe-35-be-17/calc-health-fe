@@ -5,11 +5,13 @@ import CardFood from './components/Card/CardFood';
 import { foodCard } from './fakers/index';
 import './App.css';
 import NavigationBar from './components/Navbar/Navbar';
+import Footer from './components/Footer/footer';
 
 function App() {
   return (
     <>
-      {/* <NavigationBar /> */}
+      <NavigationBar />
+      <Footer />
 
       {/* <Container>
         <Row>
