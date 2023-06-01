@@ -4,12 +4,12 @@ import ButtonSecond from './components/Button/ButtonSecond/Button';
 import CardFood from './components/Card/CardFood';
 import { foodCard } from './fakers/index';
 import './App.css';
+import NavigationBar from './components/Navbar/Navbar';
 
 function App() {
   return (
     <>
-      <ButtonPrimary style={'btn-register'}>Register</ButtonPrimary>
-      <ButtonSecond style={'btn-login'}>Login</ButtonSecond>
+      {/* <NavigationBar /> */}
 
       {/* <Container>
         <Row>
