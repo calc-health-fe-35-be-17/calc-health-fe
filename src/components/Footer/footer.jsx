@@ -1,5 +1,5 @@
-import './footer.css';
-export default function Footer() {
+import './Footer.css';
+export default function FooterComponent() {
   return (
     <footer>
       <section className="footer-container">

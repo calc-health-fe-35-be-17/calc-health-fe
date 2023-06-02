@@ -1,4 +1,4 @@
-import { Container, Nav, Navbar, NavLink } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavLink, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ButtonSecond from '../Button/ButtonSecond/Button';
 import ButtonPrimary from '../Button/ButtonPrimary/Button';
@@ -11,10 +11,11 @@ export default function NavigationBar() {
           aria-aria-controls="navbarScroll"
           data-bs-target="#navbarScroll"
         />
+
         <Navbar.Collapse id="navbarScroll" className="justify-content-between">
           <Navbar.Brand>
             <NavLink eventKey="1" as={Link} to="/">
-              <img src="/images/logo.png" alt="" width={80} height={70} />
+              <img src="/images/logo.png" alt="" width={100} height={70} />
             </NavLink>
           </Navbar.Brand>
           <Nav className="align-items-center p-0 nav-item">
