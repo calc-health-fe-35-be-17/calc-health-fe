@@ -8,14 +8,12 @@ import NavigationBar from './components/Navbar/Navbar';
 import FooterComponent from './components/Footer/footer';
 import Hero from './components/Hero/Hero';
 import ContentLandingPage from './components/Content/ContentLandingPage';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   return (
     <>
-      <NavigationBar />
-      <Hero />
-      <ContentLandingPage />
-      <FooterComponent />
+      <LandingPage />
 
       {/* <Container>
         <Row>
