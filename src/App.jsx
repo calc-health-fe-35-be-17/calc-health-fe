@@ -5,13 +5,17 @@ import CardFood from './components/Card/CardFood';
 import { foodCard } from './fakers/index';
 import './App.css';
 import NavigationBar from './components/Navbar/Navbar';
-import Footer from './components/Footer/footer';
+import FooterComponent from './components/Footer/footer';
+import Hero from './components/Hero/Hero';
+import ContentLandingPage from './components/Content/ContentLandingPage';
 
 function App() {
   return (
     <>
       <NavigationBar />
-      <Footer />
+      <Hero />
+      <ContentLandingPage />
+      <FooterComponent />
 
       {/* <Container>
         <Row>
