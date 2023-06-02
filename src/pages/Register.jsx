@@ -33,6 +33,7 @@ function Register(){
                     </Form.Group>
                     <Form.Group className="check" controlId="formBasicCheckbox">
                         <Form.Check type="radio" id='check' label="Saya setuju dengan Syarat & Kententuan dan Kebijakan Privasi" />
+                        <Form.Label></Form.Label>
                     </Form.Group>
                     <div className='buttondaftar'>
                         <Button id='daftar' variant="primary" type="submit">

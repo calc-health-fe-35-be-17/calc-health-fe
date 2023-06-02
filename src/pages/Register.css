@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
 
-body{
+/* body{
     padding: 50px 50px;
-}
+} */
 
 h1{
     display: flex;
@@ -13,16 +13,18 @@ h1{
     font-size: 48px;
     line-height: 72px;
     color: #006D75;
+    margin: 80px 0px;
 }
 
 #form{
     display: flex;
     justify-content: center;
+    margin: 80px 0px;
 }
 
 Form{
     width: 656px;
-    height: 678px;
+    height: 980px;
 
     background: #FFFFFF;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
@@ -37,11 +39,12 @@ Form{
     line-height: 36px;
 
     color: #11999E;
+    margin-top: 25px;
 }
 
 .input{
     box-sizing: border-box;
-    width: 658px;
+    width: 560px;
     height: 56px;
 
     background: #FFFFFF;
@@ -67,15 +70,15 @@ Form{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 36px;
     color: #000000;
 }
 
 #check{
     box-sizing: border-box;
-    width: 30px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 }
 
 .buttondaftar{
