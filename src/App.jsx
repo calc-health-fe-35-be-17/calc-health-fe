@@ -9,11 +9,13 @@ import FooterComponent from './components/Footer/footer';
 import Hero from './components/Hero/Hero';
 import ContentLandingPage from './components/Content/ContentLandingPage';
 import LandingPage from './pages/LandingPage';
+import Foods from './pages/ListFood';
 
 function App() {
   return (
     <>
-      <LandingPage />
+      {/* <LandingPage /> */}
+      <Foods />
 
       {/* <Container>
         <Row>
