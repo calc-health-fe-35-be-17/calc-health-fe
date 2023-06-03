@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Register.css'
+import ButtonPrimary from '../components/Button/ButtonPrimary/Button';
 
 function Register(){
     return(
@@ -35,12 +36,10 @@ function Register(){
                         <Form.Check type="radio" id='check' label="Saya setuju dengan Syarat & Kententuan dan Kebijakan Privasi" />
                     </Form.Group>
                     <div className='buttondaftar'>
-                        <Button id='daftar' variant="primary" type="submit">
-                            Daftar
-                        </Button>
+                        <ButtonPrimary style="daftar">DAFTAR</ButtonPrimary>
                     </div>
                     <div className='buttondaftar' id='login'>
-                        <Form.Text>Sudah punya akun? Login</Form.Text>
+                        <Form.Text>Sudah punya akun? <a href=''>Login</a> </Form.Text>
                     </div>
                 </Form>
             </div>

@@ -1,37 +1,42 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Login.css';
+import ButtonPrimary from '../components/Button/ButtonPrimary/Button';
+import ButtonSecond from '../components/Button/ButtonSecond/Button';
 
 function Login(){
     return(
         <>
-            <div id='img-login'>
-
-            </div>
             <div id='form'>
-                <h1>Login</h1>
-                <p>Selamat datang di Calc Health</p>
+                <div>
+                    <img src="/images/login4.png" alt="" />
+                </div>
                 <Form>
+                    <div id='logo'>
+                        <img src="/images/logo.png" alt="" />
+                    </div>
+                    <Form.Text id='textlogin'>Login</Form.Text>
+                    <Form.Text id='textselamat'>Selamat datang di Calc Health</Form.Text>
+                    {/* <h1>Login</h1> */}
+                    {/* <p>Selamat datang di Calc Health</p> */}
                     <Form.Group className="mb-3" controlId="email">
-                        <Form.Label>Email</Form.Label><br/>
+                        <Form.Label className='label'>Email</Form.Label><br/>
                         <Form.Control className='input' type="email" placeholder="" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="password">
                         <Form.Label>Password</Form.Label><br/>
                         <Form.Control className="input" type="password" placeholder="" />
                     </Form.Group>
-                    <div className="buttonlogin">
-                        <Button id='login' variant="second" type='submit'>
-                            Login
-                        </Button>
-                    </div>
-                    <div className="butondaftar">
+                    <ButtonPrimary style="login" >LOGIN</ButtonPrimary>
+                    <ButtonSecond style="signup" >SIGN UP</ButtonSecond>
+                    {/* <div className="butondaftar">
                         <Button id='sign-up' variant='primary' type='submit'>
                             Sign Up
                         </Button>
-                    </div>
+                    </div> */}
                 </Form>
             </div>
         </>
     )
 }
+export default Login
