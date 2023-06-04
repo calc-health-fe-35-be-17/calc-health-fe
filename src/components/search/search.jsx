@@ -1,5 +1,5 @@
 import { Form, FormControl } from 'react-bootstrap';
-import ButtonPrimary from '../Button/ButtonPrimary/Button';
+import ButtonPrimary from '../button/button-primary/button';
 
 export default function Search() {
   return (

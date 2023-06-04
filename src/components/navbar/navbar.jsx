@@ -1,7 +1,8 @@
-import { Container, Nav, Navbar, NavLink, Row } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import ButtonSecond from '../Button/ButtonSecond/Button';
-import ButtonPrimary from '../Button/ButtonPrimary/Button';
+import ButtonSecond from '../button/button-second/button';
+import ButtonPrimary from '../button/button-primary';
+import './navbar.css';
 
 export default function NavigationBar() {
   return (

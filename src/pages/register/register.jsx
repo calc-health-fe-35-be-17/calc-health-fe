@@ -1,7 +1,6 @@
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import './Register.css'
-import ButtonPrimary from '../components/Button/ButtonPrimary/Button';
+import './register.css'
+import ButtonPrimary from '../../components/button/button-primary';
 
 function Register(){
     return(

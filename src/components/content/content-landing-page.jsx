@@ -1,7 +1,7 @@
 import { Col, Container, Row } from 'react-bootstrap';
-import ButtonPrimary from '../Button/ButtonPrimary/Button';
+import ButtonPrimary from '../button/button-primary';
 import { Link } from 'react-router-dom';
-import './Content.css';
+import './content.css';
 
 export default function ContentLandingPage() {
   return (

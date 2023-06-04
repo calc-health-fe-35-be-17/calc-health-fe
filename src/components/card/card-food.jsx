@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 import Card from 'react-bootstrap/Card';
-import ButtonPrimary from '../Button/ButtonPrimary/Button';
+import ButtonPrimary from '../button/button-primary';
 // import { foodCard } from './../../fakers';
 import './Card.css';
 export default function CardFood(props) {

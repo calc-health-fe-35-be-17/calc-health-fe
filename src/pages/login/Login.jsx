@@ -1,8 +1,7 @@
-import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './Login.css';
-import ButtonPrimary from '../components/Button/ButtonPrimary/Button';
-import ButtonSecond from '../components/Button/ButtonSecond/Button';
+import ButtonPrimary from '../../components/button/button-primary';
+import ButtonSecond from '../../components/button/button-second/button';
 
 function Login(){
     return(
@@ -39,4 +38,4 @@ function Login(){
         </>
     )
 }
-export default Login
+export default Login;
