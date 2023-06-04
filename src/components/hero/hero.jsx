@@ -8,7 +8,7 @@ export default function Hero() {
     <Container>
       <Row className="hero">
         <Col lg={6} md={6} sm={12} className="hero-content mb-5">
-          <h1>Calc Health</h1>
+          <h1 className="justify-content-start m-0 gap-2">Calc Health</h1>
           <h3>Choise health food for the body and for the earth</h3>
           <p id="description">
             One Planet One Health, kami mengajak setiap orang untuk peduli
