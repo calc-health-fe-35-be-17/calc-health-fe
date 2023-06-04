@@ -1,15 +1,14 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 import { Container } from 'react-bootstrap';
-import Search from '../components/Search/Search';
+import Search from '../../components/search/search';
 import { BsBag } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
-import ButtonSecond from '../components/Button/ButtonSecond/Button';
-import { fetchFoods } from '../Redux/Foods/action';
+import ButtonSecond from '../../components/button/button-second';
+import { fetchFoods } from '../../redux/foods/action';
 import { connect } from 'react-redux';
 import { useEffect } from 'react';
-import Loading from '../components/Loading/Loading';
-import CardFood from '../components/Card/CardFood';
+import Loading from '../../components/loading/loading';
 
 function Foods(props) {
   useEffect(() => {

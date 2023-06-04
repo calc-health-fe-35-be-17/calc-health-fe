@@ -1,21 +1,23 @@
-import { Col, Container, Row } from 'react-bootstrap';
-import ButtonPrimary from './components/Button/ButtonPrimary/Button';
-import ButtonSecond from './components/Button/ButtonSecond/Button';
-import CardFood from './components/Card/CardFood';
-import { foodCard } from './fakers/index';
 import './App.css';
-import NavigationBar from './components/Navbar/Navbar';
-import FooterComponent from './components/Footer/footer';
-import Hero from './components/Hero/Hero';
-import ContentLandingPage from './components/Content/ContentLandingPage';
-import LandingPage from './pages/LandingPage';
-import Foods from './pages/ListFood';
+import Foods from './pages/foods';
+import TrackDiet from './pages/track-diet/track-diet';
+// import LandingPage from './pages/landing-page/landing-page';
+// import { Col, Container, Row } from 'react-bootstrap';
+// import ButtonPrimary from './components/Button/ButtonPrimary/Button';
+// import ButtonSecond from './components/Button/ButtonSecond/button';
+// import CardFood from './components/Card/CardFood';
+// import { foodCard } from './fakers/index';
+// import NavigationBar from './components/Navbar/Navbar';
+// import FooterComponent from './components/Footer/footer';
+// import Hero from './components/Hero/Hero';
+// import ContentLandingPage from './components/Content/ContentLandingPage';
+// import LandingPage from './pages/LandingPage';
 
 function App() {
   return (
     <>
       {/* <LandingPage /> */}
-      <Foods />
+      <TrackDiet />
 
       {/* <Container>
         <Row>

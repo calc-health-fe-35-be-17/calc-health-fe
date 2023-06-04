@@ -1,7 +1,7 @@
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import ButtonPrimary from '../Button/ButtonPrimary/Button';
-import './Hero.css';
+import ButtonPrimary from '../button/button-primary';
+import './hero.css';
 
 export default function Hero() {
   return (

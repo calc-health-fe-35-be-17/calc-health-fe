@@ -1,6 +1,6 @@
 import { Form } from "react-bootstrap";
-import ButtonPrimary from "../components/Button/ButtonPrimary/Button";
-import './TrackDiet.css'
+import ButtonPrimary from "../../components/button/button-primary";
+import './track-diet.css'
 
 function TrackDiet(){
     return(
