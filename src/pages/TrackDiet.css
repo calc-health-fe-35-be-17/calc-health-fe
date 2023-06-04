@@ -59,3 +59,21 @@ h1{
     line-height: 30px;
     text-align: center;
 }
+
+@media screen and (max-width:750px) {
+    h1{
+        font-size: 40px;
+    }
+
+    #calculator{
+        width: 450px;
+    }
+
+    .input{
+        width: 395px;
+    }
+
+    .hitung{
+        width: 275px;       
+    }
+}
