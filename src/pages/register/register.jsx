@@ -2,21 +2,48 @@ import './register.css';
 import ButtonPrimary from '../../components/button/button-primary';
 import { Container, Form, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { addData, getDataUser } from '../../redux/register/registerAction';
 
 function Register() {
+  const dispatch = useDispatch()
+  const { isLoading } = useSelector((state) => state.userReducer)
+  const [ inputData, setInputData ] = useState("")
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let newData = {
+      namaDepan : inputData,
+      namaBelakang : inputData,
+      email : inputData,
+      password : inputData,
+      konfirmasiPassword : inputData,
+    }
+
+    dispatch(addData(newData))
+    setInputData("")
+  }
+
+  useEffect(() => {
+    dispatch(getDataUser());
+  }, []);
+
   return (
     <>
       <Container className="my-5">
         <Row className="flex-column justify-content-center align-items-center gap-lg-5">
           <h1 className="title-register text-center">Welcome to Calc Health</h1>
           <div className="form-container rounded">
-            <Form>
+            <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-4">
                 <Form.Label className="label">Nama Depan</Form.Label>
                 <Form.Control
                   className="form-input input"
                   type="text"
                   placeholder=""
+                  value={inputData}
+                  onChange={(e) => setInputData(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-4">
@@ -73,6 +100,7 @@ function Register() {
           </div>
         </Row>
       </Container>
+      {isLoading && <span>Loading...</span>}
     </>
   );
 }
