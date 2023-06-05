@@ -36,8 +36,8 @@ export const fetchFoods = () => {
       const response = await axios.get(
         `${BASE_URL}/complexSearch?apiKey=${API_KEY}&number=30`
       );
-      const data = await response.data;
-      dispatch(fetchFoodSuccess(data.results));
+      const data = await response.data.results;
+      dispatch(fetchFoodSuccess(data));
     } catch (error) {
       dispatch(fetchFoodFailure(error.message));
     }

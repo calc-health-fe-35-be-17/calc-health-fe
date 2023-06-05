@@ -7,17 +7,17 @@ import './Card.css';
 export default function CardFood(props) {
   const { img, title, calori, carbon } = props;
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Body>
-        <Card.Img variant="top" src={img} />
-        <Card.Title className="food-title">{title}</Card.Title>
-        <Card.Text>
-          <p className="calori">{calori} Kkal</p>
-          <p className="carbon">{carbon} KgCO2</p>
+    <Card style={{ width: '14rem' }} className='rounded-0 border-0'>
+      <Card.Body className='p-0'>
+        <Card.Img variant="top" src={img}  className='rounded-0'/>
+        <Card.Title className="food-title fs-6 mt-2" style={{height: '55px'}}>{title}</Card.Title>
+        <Card.Text className='mb-0 px-2'>
+          <p className="calori">Calori: {calori}Kkal</p>
+          <p className="carbon">Carbon: {carbon}KgCO2</p>
         </Card.Text>
-        <div className="d-flex justify-content-between">
-          <ButtonPrimary style={'btn-'}>Pilih</ButtonPrimary>
-          <ButtonPrimary style={'btn-'}>Detail</ButtonPrimary>
+        <div className="d-flex justify-content-between pb-3 px-3">
+          <ButtonPrimary style={'btn-card'}>Pilih</ButtonPrimary>
+          <ButtonPrimary style={'btn-card'}>Detail</ButtonPrimary>
         </div>
       </Card.Body>
     </Card>

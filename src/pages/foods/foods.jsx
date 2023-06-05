@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
-import { Container } from 'react-bootstrap';
+import { Container, Stack } from 'react-bootstrap';
 import Search from '../../components/search/search';
 import { BsBag } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
@@ -9,6 +9,7 @@ import { fetchFoods } from '../../redux/foods/action';
 import { connect } from 'react-redux';
 import { useEffect } from 'react';
 import Loading from '../../components/loading/loading';
+import CardFood from '../../components/card/card-food';
 
 function Foods(props) {
   useEffect(() => {
@@ -35,10 +36,24 @@ function Foods(props) {
         ) : props.foodlist.error ? (
           <h2>{props.foodlist.error}</h2>
         ) : (
-          <div>
-            <h2>Success</h2>
-            {console.log(props.foodlist.data)}
-          </div>
+          <Stack
+          className="p-3  flex-row flex-wrap justify-content-center gap-5"
+          style={{
+            marginTop: '50px',
+          }}>
+          {props.foodlist.data.map((food, i) => {
+            console.log(food)
+            return (
+              <CardFood
+                key={i}
+                title={food.title}
+                img={food.image}
+                calori={33.8}
+                carbon={0.9}
+              />
+            );
+          })}
+        </Stack>
         )}
       </div>
     </Container>
