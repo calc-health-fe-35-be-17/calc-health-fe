@@ -1,134 +1,47 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
 
-h1{
-    display: flex;
-    justify-content: center;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 48px;
-    line-height: 72px;
+.title-register{
     color: #006D75;
-    margin: 80px 0px;
+    font-weight: 700;
+    font-size: 2.6rem;
 }
 
-#form{
-    display: flex;
-    justify-content: center;
-    margin: 80px 0px;
-}
-
-Form{
-    width: 656px;
-    height: 1078px;
-
-    background: #FFFFFF;
+.form-container {
+    background: #ffffff;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
     padding: 50px 50px;
+    width: 60%;
 }
 
-.mb-3{
+.label{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 36px;
-
+    font-size: 1.2rem;
     color: #11999E;
-    margin-top: 25px;
 }
 
-.input{
-    box-sizing: border-box;
-    width: 560px;
-    height: 56px;
-
+.form-input{
     background: #FFFFFF;
     border: 1px solid #11999E;
     border-radius: 8px;
 }
 
-#passwordHelpBlock{
-    width: 247px;
-    height: 37px;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 100;
-    font-size: 17px;
-    line-height: 36px;
-
-    color: #11999E;
-}
-
-.check{
-    width: 560px;
-    height: 76px;
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 36px;
-    color: #000000;
-    margin-bottom: 50px;
-}
-
-#check{
-    box-sizing: border-box;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    margin-bottom: 36px;
-}
-
-#check:checked{
-    background-color: #000000;
-}
-
-.buttondaftar{
-    display: flex;
-    justify-content: center;
-}
-
 .daftar{
-    width: 375px;
-    height: 73px;
-    
-    border: none;
-    background: #36CFC9;
-    border-radius: 8px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 800;
-    font-size: 20px;
-    line-height: 30px;
-    color: #FFFFFF;
+    font-size: 1rem;
 }
 
-#login{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 36px;
-    color: #000000;
-}
+@media screen and (max-width: 800px) {
+    .form-container {
+        margin-top: 10px;
+        width: 90%;
+        padding: 3rem 1.5rem;
+    }
+    .check {
+        width: 100%;
+    }
 
-@media screen and (max-width:720px){
-    h1{
-        font-size: 36px;
-    }
-    
-    Form{
-        width: 456px;
-        height: 1030px;
-    }
-    
-    .input{
-        width: 360px;
-    }
-    
-    .check{
-        width: 383px;
-        margin-bottom: 50px;
-    }
-} */
+}

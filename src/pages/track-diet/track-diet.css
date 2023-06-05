@@ -1,79 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
 
-#diet{
-    margin: 50px auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-h1{
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 60px;
-    line-height: 90px;
+.title-diet{
     color: #13C2C2;
-    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 2.6rem;
 }
 
-#calculator{
-    width: 747px;
-    height: 565px;
+.form-diet {
     border: 2px solid #36CFC9;
-    padding: 85px 26px;
+    border-radius: 8px;
+    padding: 50px 50px;
+    width: 60%;
 }
 
 .label{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 36px;
-    color: #13C2C2;
+    font-size: 1.2rem;
+    color: #11999E;
 }
 
-.input{
-    box-sizing: border-box;
-    width: 695px;
-    height: 56px;
-    background: #F5F5F5;
+.input-calc{
     border: 1px solid #36CFC9;
-    border-radius: 8px;
-    margin-bottom: 68px;
-}
-
-#hitung{
-    display: flex;
-    justify-content: center;
 }
 
 .hitung{
-    width: 375px;
-    height: 62px;
-    border-radius: 8px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 800;
-    font-size: 20px;
-    line-height: 30px;
-    text-align: center;
+    font-size: 1rem;
 }
 
-@media screen and (max-width:750px) {
-    h1{
-        font-size: 40px;
-    }
-
-    #calculator{
-        width: 450px;
-    }
-
-    .input{
-        width: 395px;
-    }
-
-    .hitung{
-        width: 275px;       
+@media screen and (max-width: 800px) {
+    .form-diet {
+        width: 90%;
     }
 }
