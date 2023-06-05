@@ -7,7 +7,7 @@ export default function Layout(props) {
   return (
     <>
       <NavigationBar />
-      <div>{children}</div>
+      <main>{children}</main>
       <FooterComponent />
     </>
   );

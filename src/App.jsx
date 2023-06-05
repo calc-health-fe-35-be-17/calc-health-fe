@@ -8,17 +8,15 @@ import Register from './pages/register';
 
 function App() {
   return (
-    <>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/makanan" element={<Foods />} />
-          <Route path="/trackdiet" element={<TrackDiet />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-      </Layout>
-    </>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/makanan" element={<Foods />} />
+        <Route path="/trackdiet" element={<TrackDiet />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+    </Layout>
   );
 }
 
