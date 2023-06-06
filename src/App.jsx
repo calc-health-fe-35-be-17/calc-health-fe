@@ -6,6 +6,7 @@ import TrackDiet from './pages/track-diet/track-diet';
 import Login from './pages/login';
 import Register from './pages/register';
 import TrackCalori from './pages/track-calori';
+import TrackCarbon from './pages/track-carbon';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/makanan" element={<Foods />} />
         <Route path="/trackdiet" element={<TrackDiet />} />
         <Route path="/trackcalori" element={<TrackCalori />} />
+        <Route path="/trackcarbon" element={<TrackCarbon />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
       </Routes>
