@@ -1,0 +1,30 @@
+
+.calculate-composition-box{
+    color: black;
+    display: flex;
+    gap: 0 20px;
+    /* justify-content: center; */
+    /* align-items: center; */
+}
+
+.calculate-composition-box .circle-composition{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: var(--young);
+}
+
+.description-composition{
+    font-size: 18px;
+    /* min-height: 100% !important; */
+    /* display: block; */
+    /* background-color: var(--blue); */
+    /* max-height: fit-content; */
+
+}
+
+.description-composition span{ 
+    font-size: 14px;
+    line-height: 21px;
+    color: #9D9D9D;
+}
