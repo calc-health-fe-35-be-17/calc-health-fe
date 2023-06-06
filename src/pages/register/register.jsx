@@ -9,20 +9,41 @@ import { addData, getDataUser } from '../../redux/register/registerAction';
 function Register() {
   const dispatch = useDispatch()
   const { isLoading } = useSelector((state) => state.userReducer)
-  const [ inputData, setInputData ] = useState("")
+  const [ inputNamaDepan, setInputNamaDepan ] = useState("")
+  const [ inputNamaBelakang, setInputNamaBelakang ] = useState("")
+  const [ inputUmur, setInputUmur ] = useState("")
+  const [ inputGender, setInputGender ] = useState("")
+  const [ inputTB, setInputTB ] = useState("")
+  const [ inputBB, setInputBB ] = useState("")
+  const [ inputEmail, setInputEmail ] = useState("")
+  const [ inputPassword, setInputPassword ] = useState("")
+  const [ inputKonfirmasi, setInputKonfirmasi ] = useState("")
   
   const handleSubmit = (e) => {
     e.preventDefault();
     let newData = {
-      namaDepan : inputData,
-      namaBelakang : inputData,
-      email : inputData,
-      password : inputData,
-      konfirmasiPassword : inputData,
+      namaDepan : inputNamaDepan,
+      namaBelakang : inputNamaBelakang,
+      umur : inputUmur,
+      gender : inputGender,
+      tb : inputTB,
+      bb : inputBB,
+      email : inputEmail,
+      password : inputPassword,
+      konfirmasiPassword : inputKonfirmasi,
     }
 
     dispatch(addData(newData))
-    setInputData("")
+    setInputNamaDepan("")
+    setInputNamaBelakang("")
+    setInputUmur("")
+    setInputGender("")
+    setInputTB("")
+    setInputBB("")
+    setInputEmail("")
+    setInputPassword("")
+    setInputKonfirmasi("")
+
   }
 
   useEffect(() => {
@@ -42,8 +63,8 @@ function Register() {
                   className="form-input input"
                   type="text"
                   placeholder=""
-                  value={inputData}
-                  onChange={(e) => setInputData(e.target.value)}
+                  value={inputNamaDepan}
+                  onChange={(e) => setInputNamaDepan(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-4">
@@ -52,6 +73,48 @@ function Register() {
                   className="form-input input"
                   type="text"
                   placeholder=""
+                  value={inputNamaBelakang}
+                  onChange={(e) => setInputNamaBelakang(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label className="label">Umur</Form.Label>
+                <Form.Control
+                  className="form-input input"
+                  type="number"
+                  placeholder=""
+                  value={inputUmur}
+                  onChange={(e) => setInputUmur(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label className="label">Gender</Form.Label>
+                <Form.Control
+                  className="form-input input"
+                  type="text"
+                  placeholder=""
+                  value={inputGender}
+                  onChange={(e) => setInputGender(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label className="label">Tinggi Badan</Form.Label>
+                <Form.Control
+                  className="form-input input"
+                  type="number"
+                  placeholder=""
+                  value={inputTB}
+                  onChange={(e) => setInputTB(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group className="mb-4">
+                <Form.Label className="label">Berat Badan</Form.Label>
+                <Form.Control
+                  className="form-input input"
+                  type="number"
+                  placeholder=""
+                  value={inputBB}
+                  onChange={(e) => setInputBB(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-4">
@@ -60,6 +123,8 @@ function Register() {
                   className="form-input input"
                   type="email"
                   placeholder=""
+                  value={inputEmail}
+                  onChange={(e) => setInputEmail(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-4">
@@ -68,6 +133,8 @@ function Register() {
                   className="form-input input"
                   type="password"
                   placeholder=""
+                  value={inputPassword}
+                  onChange={(e) => setInputPassword(e.target.value)}
                 />
                 <Form.Text className="mb-4" muted>
                   Minimal 8 karakter
@@ -79,6 +146,8 @@ function Register() {
                   className="form-input input"
                   type="password"
                   placeholder=""
+                  value={inputKonfirmasi}
+                  onChange={(e) => setInputKonfirmasi(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="w-75">
@@ -100,7 +169,7 @@ function Register() {
           </div>
         </Row>
       </Container>
-      {isLoading && <span>Loading...</span>}
+      {isLoading && <span>Register success...</span>}
     </>
   );
 }
