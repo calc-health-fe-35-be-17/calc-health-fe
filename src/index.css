@@ -1,7 +1,21 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&family=Poppins:wght@400;500;700&display=swap'); */
 
+:root{
+  --blue: #11999E;
+  --young: #13C2C2;
+}
+
 #root {
   font-family: 'Poppins', sans-serif;
+}
+
+
+.bg-blue{
+  background-color: var(--blue);
+}
+
+.bg-secondary{
+  background-color: var(--young);
 }
 
 /* form  */

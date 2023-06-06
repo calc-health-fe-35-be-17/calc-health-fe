@@ -1,0 +1,12 @@
+/* DEKSTOP */
+.track-calori__wrapper{
+    padding: 0 80px;
+    color:  #11999E;;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .track-calori__wrapper{
+        padding: 0 10px;
+    }
+}

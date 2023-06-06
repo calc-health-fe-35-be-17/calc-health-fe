@@ -1,0 +1,33 @@
+.diagram-box__wrapper{
+    padding: 30px;
+}
+
+.required-calori_title{
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 100;
+    font-size: 20px;
+    width: 200px;
+    display: block;
+}
+
+.circle-diagram{
+    background-color: var(--blue);
+    height: 350px;
+    width: 350px;
+    border-radius: 500px;
+    margin: 0 auto;
+}
+
+.calculate-calori{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 25px 0;
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.calculate-calori span{
+    color: black;
+}
