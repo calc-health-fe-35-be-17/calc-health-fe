@@ -32,6 +32,18 @@
     font-size: 1rem;
 }
 
+.result{
+    background-color: #E3E3E3;
+    border-radius: 40px;
+}
+
+.score{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
 @media screen and (max-width: 800px) {
     .form-diet {
         width: 90%;
