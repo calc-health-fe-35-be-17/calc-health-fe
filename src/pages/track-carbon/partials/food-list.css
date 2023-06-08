@@ -1,0 +1,33 @@
+.food-list{
+  display: flex;
+  flex-direction: column;
+}
+
+.food-list__wrapper{
+  padding: 30px;
+}
+
+.food-list_button-track{
+  width: 100%;
+  display: flex;
+  justify-content: end;
+}
+
+.food-list__wrapper-empty{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-choose-food{
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.btn-track-carbon{
+  font-size: 14px;
+  font-weight: bolder;
+}
+
