@@ -3,7 +3,7 @@
 import Card from 'react-bootstrap/Card';
 import ButtonPrimary from '../button/button-primary';
 // import { foodCard } from './../../fakers';
-import './Card.css';
+import './card.css';
 export default function CardFood(props) {
   const { img, title, calori, carbon } = props;
   return (
