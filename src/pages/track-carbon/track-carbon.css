@@ -1,0 +1,45 @@
+.carbon-description {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #6D6D6D;
+  font-weight: lighter;
+}
+
+.box-carbon-calculate {
+  background-color: #E4F9F5;
+}
+
+.text-tips{
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.9rem;
+  color: #6D6D6D;
+  font-weight: lighter;
+}
+
+.tips {
+  font-style: normal;
+  font-size: 1.1rem;
+  color: #13c2c2;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+}
+
+.carbon-food-bar {
+  height: 1.6rem;
+  border-radius: 100px;
+  background-color: #DEE2E1;
+}
+
+.carbon-food-text {
+  font-family: 'Nunito', sans-serif;
+  color: #DC3545;
+  font-weight: 700;
+}
+
+.unit {
+  font-size: 1.5rem;
+}
+.unit_2 {
+  font-size: 1rem;
+}
