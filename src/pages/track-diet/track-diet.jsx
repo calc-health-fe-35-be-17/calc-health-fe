@@ -40,7 +40,7 @@ function TrackDiet() {
     imgsrc=null
   }else if(bmi<18.5){
     imgsrc=('../../../public/images/underweight.png')
-  }else if(bmi>-18.5 && bmi<=24.9){
+  }else if(bmi>=18.5 && bmi<=24.9){
     imgsrc=('../../../public/images/normal.png')
   }else if(bmi>=25 && bmi<=29.9){
     imgsrc=('../../../public/images/overweight.png')
