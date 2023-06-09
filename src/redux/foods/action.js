@@ -34,7 +34,7 @@ export const fetchFoods = () => {
     try {
       dispatch(fetchFoodRequest);
       const response = await axios.get(
-        `${BASE_URL}/complexSearch?apiKey=${API_KEY}&number=30`
+        `${BASE_URL}/complexSearch?apiKey=${API_KEY}&number=30&minProtein=10`
       );
       const data = await response.data.results;
       dispatch(fetchFoodSuccess(data));
