@@ -11,10 +11,8 @@ export default function CardFood(props) {
       <Card.Body>
         <Card.Img variant="top" src={img} />
         <Card.Title className="food-title">{title}</Card.Title>
-        <Card.Text>
-          <p className="calori">{calori} Kkal</p>
-          <p className="carbon">{carbon} KgCO2</p>
-        </Card.Text>
+        <Card.Text className="calori">{calori} Kkal</Card.Text>
+        <Card.Text className="carbon">{carbon} KgCO2</Card.Text>
         <div className="d-flex justify-content-between">
           <ButtonPrimary style={'btn-'}>Pilih</ButtonPrimary>
           <ButtonPrimary style={'btn-'}>Detail</ButtonPrimary>
