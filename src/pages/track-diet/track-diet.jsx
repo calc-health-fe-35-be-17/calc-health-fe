@@ -13,23 +13,22 @@ function TrackDiet() {
   let calculatebmi = (event)=>{
     event.preventDefault()
     if(weight === '' || height === ''){
-      alert("invalid input")
+      alert("Please fill out the entire form")
     }
     else{
       let bmi = (weight/(height/100)**2)
       setBmi(bmi.toFixed(2))
-
       if(bmi<18.5){
-        setOutput("Underweight")
+        setOutput("UNDERWEIGHT")
         setDescription("Wahh berat badan kamu sudah dibawah batas berat normal nih sobat!! Sekarang kamu harus mulai mengatur pola makanan nih. Biar berat badan kamu cepat naik kamu perlu menambah konsumsi kalori 2800-3000 per harinya nih sobat. Makan yang lebih banyak ya sobat!! ")
       }else if(bmi>=18.5 && bmi<=24.9){
-        setOutput("Normal")
+        setOutput("NORMAL")
         setDescription("Wahh hebat berat badan kamu normal nih sobat!! Itu artinya berat badan kamu tidak kurang ataupun berlebih. Pertahankan berat badan idealmu dengan mengonsumsi kalori 2500 per hari ya sobat!! ")
       }else if(bmi>=25 && bmi<=29.9){
-        setOutput("Overweight")
+        setOutput("OVERWEIGHT")
         setDescription("Wahh berat badan kamu sudah melebihi batas berat normal nih sobat!! Sekarang kamu harus mulai mengatur pola makanan nih. Biar berat badan kamu cepat turun kamu perlu konsumsi kalori 1100-1600 per harinya nih sobat. Jangan sampai kelebihan kalori yaa ")
       }else{
-        setOutput("Obesity")
+        setOutput("OBESITY")
         setDescription("Berat badan kamu sudah masuk ke kategory Obesitas sobat!! Sekarang kamu harus mulai mengatur pola makanan dan juga olah raga agar kamu dapat membakar kalori. Biar berat badan kamu cepat turun kamu perlu konsumsi kalori 1100-1600 per harinya nih sobat. Jangan sampai kelebihan kalori yaa")
       }
     }
@@ -39,13 +38,13 @@ function TrackDiet() {
   if(bmi===''){
     imgsrc=null
   }else if(bmi<18.5){
-    imgsrc=('../../../public/images/underweight.png')
+    imgsrc=('/images/underweight.png')
   }else if(bmi>=18.5 && bmi<=24.9){
-    imgsrc=('../../../public/images/normal.png')
+    imgsrc=('/images/normal.png')
   }else if(bmi>=25 && bmi<=29.9){
-    imgsrc=('../../../public/images/overweight.png')
+    imgsrc=('/images/overweight.png')
   }else{
-    imgsrc=('../../../public/images/obesity.png')
+    imgsrc=('/images/obesity.png')
   }
 
   return (
@@ -90,12 +89,13 @@ function TrackDiet() {
               <h2 className='score'>{bmi}</h2>
             </section>
             <section className="result container d-flex justify-content-center align-items-center mt-5 col-lg-8 col-sm-12">
-              <div class=" col-lg-3 col-sm-6 py-4">
+              <div className=" col-lg-5 col-sm-6 py-4">
                 <img src={imgsrc} alt="" />
               </div>
-              <div class=" col-lg-8 col-sm-6">
+              <div className=" col-lg-7 col-sm-6 py-4">
                 <h3 className='score'>{output}</h3>
                 <p>{description}</p>
+                <ButtonPrimary>Rekomendasi Menu</ButtonPrimary>
               </div>
             </section>
           </div>
