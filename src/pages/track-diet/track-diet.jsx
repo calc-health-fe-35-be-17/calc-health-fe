@@ -13,49 +13,45 @@ function TrackDiet() {
   let calculatebmi = event => {
     event.preventDefault();
     if (weight === '' || height === '') {
-      alert('invalid input');
+      alert('Please fill out the entire form');
     } else {
       let bmi = weight / (height / 100) ** 2;
       setBmi(bmi.toFixed(2));
-
       if (bmi < 18.5) {
-        setOutput('Underweight');
+        setOutput('UNDERWEIGHT');
         setDescription(
           'Wahh berat badan kamu sudah dibawah batas berat normal nih sobat!! Sekarang kamu harus mulai mengatur pola makanan nih. Biar berat badan kamu cepat naik kamu perlu menambah konsumsi kalori 2800-3000 per harinya nih sobat. Makan yang lebih banyak ya sobat!! '
         );
       } else if (bmi >= 18.5 && bmi <= 24.9) {
-        setOutput('Normal');
+        setOutput('NORMAL');
         setDescription(
           'Wahh hebat berat badan kamu normal nih sobat!! Itu artinya berat badan kamu tidak kurang ataupun berlebih. Pertahankan berat badan idealmu dengan mengonsumsi kalori 2500 per hari ya sobat!! '
         );
       } else if (bmi >= 25 && bmi <= 29.9) {
-        setOutput('Overweight');
+        setOutput('OVERWEIGHT');
         setDescription(
           'Wahh berat badan kamu sudah melebihi batas berat normal nih sobat!! Sekarang kamu harus mulai mengatur pola makanan nih. Biar berat badan kamu cepat turun kamu perlu konsumsi kalori 1100-1600 per harinya nih sobat. Jangan sampai kelebihan kalori yaa '
         );
       } else {
-        setOutput('Obesity');
+        setOutput('OBESITY');
         setDescription(
           'Berat badan kamu sudah masuk ke kategory Obesitas sobat!! Sekarang kamu harus mulai mengatur pola makanan dan juga olah raga agar kamu dapat membakar kalori. Biar berat badan kamu cepat turun kamu perlu konsumsi kalori 1100-1600 per harinya nih sobat. Jangan sampai kelebihan kalori yaa'
         );
       }
     }
-
-    setHeight('');
-    setWeight('');
   };
 
   let imgsrc;
   if (bmi === '') {
     imgsrc = null;
   } else if (bmi < 18.5) {
-    imgsrc = '../../../public/images/underweight.png';
+    imgsrc = '/images/underweight.png';
   } else if (bmi >= 18.5 && bmi <= 24.9) {
-    imgsrc = '../../../public/images/normal.png';
+    imgsrc = '/images/normal.png';
   } else if (bmi >= 25 && bmi <= 29.9) {
-    imgsrc = '../../../public/images/overweight.png';
+    imgsrc = '/images/overweight.png';
   } else {
-    imgsrc = '../../../public/images/obesity.png';
+    imgsrc = '/images/obesity.png';
   }
 
   return (
