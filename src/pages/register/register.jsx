@@ -18,6 +18,7 @@ function Register() {
   const [ inputEmail, setInputEmail ] = useState("")
   const [ inputPassword, setInputPassword ] = useState("")
   const [ inputKonfirmasi, setInputKonfirmasi ] = useState("")
+
   
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -150,13 +151,6 @@ function Register() {
                   onChange={(e) => setInputKonfirmasi(e.target.value)}
                 />
               </Form.Group>
-              <Form.Group className="w-75">
-                <Form.Check
-                  className="form-check check"
-                  type="radio"
-                  label="Saya setuju dengan Syarat & Kententuan dan Kebijakan Privasi"
-                />
-              </Form.Group>
               <div className="daftar d-flex justify-content-center align-items-center my-4">
                 <ButtonPrimary style="daftar w-50 py-2">DAFTAR</ButtonPrimary>
               </div>
@@ -169,7 +163,7 @@ function Register() {
           </div>
         </Row>
       </Container>
-      {isLoading && <span>Register success...</span>}
+      {isLoading}
     </>
   );
 }
