@@ -41,8 +41,8 @@ export default function FooterComponent() {
         <div className="partner">
           <h5>Challenge Partner & Mitra</h5>
           <div className="image-partner">
-            <img src="images/danone.png" className="danone" alt="danone" />
-            <img src="images/skilvul.png" className="skilvul" alt="skilvul" />
+            <img src="/images/danone.png" className="danone" alt="danone" />
+            <img src="/images/skilvul.png" className="skilvul" alt="skilvul" />
           </div>
         </div>
       </section>
@@ -51,10 +51,10 @@ export default function FooterComponent() {
       <div className="copyright">
         <p>Copyright © FE-35 & BE-17 - Calc Health | All Right Reserved</p>
         <div className="social-media">
-          <img src="images/Facebook 1.png" alt="facebook" />
-          <img src="images/Instagram 1.png" alt="instagram" />
-          <img src="images/Twitter 1.png" alt="twitter" />
-          <img src="images/Youtube 1.png" alt="youtube" />
+          <img src="/images/Facebook 1.png" alt="facebook" />
+          <img src="/images/Instagram 1.png" alt="instagram" />
+          <img src="/images/Twitter 1.png" alt="twitter" />
+          <img src="/images/Youtube 1.png" alt="youtube" />
         </div>
       </div>
     </footer>

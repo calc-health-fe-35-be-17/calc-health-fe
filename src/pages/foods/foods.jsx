@@ -37,23 +37,24 @@ function Foods(props) {
           <h2>{props.foodlist.error}</h2>
         ) : (
           <Stack
-          className="p-3  flex-row flex-wrap justify-content-center gap-5"
-          style={{
-            marginTop: '50px',
-          }}>
-          {props.foodlist.data.map((food, i) => {
-            console.log(food)
-            return (
-              <CardFood
-                key={i}
-                title={food.title}
-                img={food.image}
-                calori={33.8}
-                carbon={0.9}
-              />
-            );
-          })}
-        </Stack>
+            className="p-3  flex-row flex-wrap justify-content-center gap-5"
+            style={{
+              marginTop: '50px',
+            }}
+          >
+            {props.foodlist.data.map((food, i) => {
+              console.log(food);
+              return (
+                <CardFood
+                  key={i}
+                  title={food.title}
+                  img={food.image}
+                  id={food.id}
+                  protein={food.nutrition.nutrients[0].amount}
+                />
+              );
+            })}
+          </Stack>
         )}
       </div>
     </Container>
