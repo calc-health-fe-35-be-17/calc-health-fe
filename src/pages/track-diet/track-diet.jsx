@@ -39,6 +39,8 @@ function TrackDiet() {
         );
       }
     }
+    setWeight('')
+    setHeight('')
   };
 
   let imgsrc;
