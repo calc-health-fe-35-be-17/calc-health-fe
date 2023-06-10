@@ -5,8 +5,34 @@ import ButtonSecond from '../../components/button/button-second/button';
 import { Col, Container, Row } from 'react-bootstrap';
 import { InputGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
+import { getDataLogin } from '../../redux/login/loginAction';
 
 function Login() {
+  const dispatch = useDispatch();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const userData = {
+      email: email,
+      password: password
+    };
+
+    dispatch(getDataLogin());
+  };
+
   return (
     <Container fluid>
       <Row>
@@ -19,7 +45,7 @@ function Login() {
               <h4>Login</h4>
               <p className="">Selamat datang di CalcHealth</p>
             </div>
-            <Form className="w-100 d-flex flex-column gap-4">
+            <Form className="w-100 d-flex flex-column gap-4" onSubmit={handleSubmit}>
               <Form.Group>
                 <Form.Label>Email</Form.Label>
                 <InputGroup className="mb-3">
@@ -29,6 +55,8 @@ function Login() {
                     aria-label="Email"
                     aria-describedby="basic-addon1"
                     type="email"
+                    value={email}
+                    onChange={handleEmail}
                   />
                 </InputGroup>
               </Form.Group>
@@ -41,6 +69,8 @@ function Login() {
                     aria-label="Username"
                     aria-describedby="basic-addon1"
                     type="password"
+                    value={password}
+                    onChange={handlePassword}
                   />
                 </InputGroup>
               </Form.Group>

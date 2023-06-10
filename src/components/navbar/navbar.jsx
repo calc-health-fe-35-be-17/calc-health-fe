@@ -9,7 +9,7 @@ export default function NavigationBar() {
     <Navbar collapseOnSelect expand="sm" className="p-0">
       <Container fluid>
         <Navbar.Toggle
-          aria-aria-controls="navbarScroll"
+          aria-controls="navbarScroll"
           data-bs-target="#navbarScroll"
         />
 
