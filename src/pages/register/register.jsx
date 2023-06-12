@@ -34,16 +34,22 @@ function Register() {
       konfirmasiPassword : inputKonfirmasi,
     }
 
-    dispatch(addData(newData))
-    setInputNamaDepan("")
-    setInputNamaBelakang("")
-    setInputUmur("")
-    setInputGender("")
-    setInputTB("")
-    setInputBB("")
-    setInputEmail("")
-    setInputPassword("")
-    setInputKonfirmasi("")
+    if(inputNamaDepan === '' || inputNamaBelakang === '' || inputUmur === '' || inputGender === '' || inputTB === '' || inputBB === '' || inputEmail === '' || inputPassword === '' || inputKonfirmasi === ''){
+      alert('Please fill out the entire form')
+    }else if(inputKonfirmasi !== inputPassword){
+      alert('Your password does not match')
+    }else{
+      dispatch(addData(newData))
+      setInputNamaDepan("")
+      setInputNamaBelakang("")
+      setInputUmur("")
+      setInputGender("")
+      setInputTB("")
+      setInputBB("")
+      setInputEmail("")
+      setInputPassword("")
+      setInputKonfirmasi("")
+    }
 
   }
 
@@ -135,6 +141,7 @@ function Register() {
                   type="password"
                   placeholder=""
                   value={inputPassword}
+                  minLength={8}
                   onChange={(e) => setInputPassword(e.target.value)}
                 />
                 <Form.Text className="mb-4" muted>
@@ -148,6 +155,7 @@ function Register() {
                   type="password"
                   placeholder=""
                   value={inputKonfirmasi}
+                  minLength={8}
                   onChange={(e) => setInputKonfirmasi(e.target.value)}
                 />
               </Form.Group>
