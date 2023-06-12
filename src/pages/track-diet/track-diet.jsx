@@ -2,6 +2,7 @@ import { Container, Form, Row } from 'react-bootstrap';
 import ButtonPrimary from '../../components/button/button-primary';
 import './track-diet.css';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function TrackDiet() {
   const [weight, setWeight] = useState('');
@@ -105,6 +106,7 @@ function TrackDiet() {
                 <div className="col-lg-8 col-sm-12">
                   <h3 className="score">{output}</h3>
                   <p>{description}</p>
+                  <Link to={'/planmeal'}><ButtonPrimary>Meal Plan</ButtonPrimary></Link>
                 </div>
               </section>
             </div>
