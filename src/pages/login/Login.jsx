@@ -13,6 +13,7 @@ function Login() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errors, setErrors] = useState({});
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -22,15 +23,36 @@ function Login() {
     setPassword(e.target.value);
   };
 
+  const validateForm = () => {
+    let isValid = true;
+    const newErrors = {};
+
+    if (email.trim() === '') {
+      newErrors.email = 'Email should not be empty';
+      isValid = false;
+    }
+
+    if (password.trim() === '') {
+      newErrors.password = 'Password should not be empty';
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const userData = {
-      email: email,
-      password: password
-    };
+    if(validateForm()) {
+      const userData = {
+        email: email,
+        password: password
+      };
 
-    dispatch(getDataLogin());
+      dispatch(getDataLogin(userData));
+    }
+
   };
 
   return (
@@ -59,6 +81,7 @@ function Login() {
                     onChange={handleEmail}
                   />
                 </InputGroup>
+                {errors.email && <span className="text-danger">{errors.email}</span>}
               </Form.Group>
               <Form.Group>
                 <Form.Label>Password</Form.Label>
@@ -73,6 +96,7 @@ function Login() {
                     onChange={handlePassword}
                   />
                 </InputGroup>
+                {errors.password && <span className="text-danger">{errors.password}</span>}
               </Form.Group>
               <ButtonPrimary type="submit" style="py-2">
                 Sign In
