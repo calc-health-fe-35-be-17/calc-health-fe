@@ -1,7 +1,7 @@
 import './register.css';
 import ButtonPrimary from '../../components/button/button-primary';
 import { Container, Form, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { addData, getDataUser } from '../../redux/register/registerAction';
@@ -18,6 +18,7 @@ function Register() {
   const [ inputEmail, setInputEmail ] = useState("")
   const [ inputPassword, setInputPassword ] = useState("")
   const [ inputKonfirmasi, setInputKonfirmasi ] = useState("")
+  const navigate = useNavigate()
 
   
   const handleSubmit = (e) => {
@@ -49,6 +50,8 @@ function Register() {
       setInputEmail("")
       setInputPassword("")
       setInputKonfirmasi("")
+      alert('Register success')
+      navigate('/login')
     }
 
   }
