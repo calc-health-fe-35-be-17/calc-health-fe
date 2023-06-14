@@ -7,54 +7,68 @@ import { useEffect, useState } from 'react';
 import { addData, getDataUser } from '../../redux/register/registerAction';
 
 function Register() {
-  const dispatch = useDispatch()
-  const { isLoading } = useSelector((state) => state.userReducer)
-  const [ inputNamaDepan, setInputNamaDepan ] = useState("")
-  const [ inputNamaBelakang, setInputNamaBelakang ] = useState("")
-  const [ inputUmur, setInputUmur ] = useState("")
-  const [ inputGender, setInputGender ] = useState("")
-  const [ inputTB, setInputTB ] = useState("")
-  const [ inputBB, setInputBB ] = useState("")
-  const [ inputEmail, setInputEmail ] = useState("")
-  const [ inputPassword, setInputPassword ] = useState("")
-  const [ inputKonfirmasi, setInputKonfirmasi ] = useState("")
-  const navigate = useNavigate()
+  const dispatch = useDispatch();
+  const { isLoading } = useSelector(state => state.userReducer);
+  const [inputNamaDepan, setInputNamaDepan] = useState('');
+  const [inputNamaBelakang, setInputNamaBelakang] = useState('');
+  const [inputUmur, setInputUmur] = useState('');
+  const [inputGender, setInputGender] = useState('');
+  const [inputTB, setInputTB] = useState('');
+  const [inputBB, setInputBB] = useState('');
+  const [inputEmail, setInputEmail] = useState('');
+  const [inputPassword, setInputPassword] = useState('');
+  const [inputKonfirmasi, setInputKonfirmasi] = useState('');
+  const navigate = useNavigate();
+  const [showAlert, setShowAlert] = useState(false);
 
-  
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
     let newData = {
-      namaDepan : inputNamaDepan,
-      namaBelakang : inputNamaBelakang,
-      umur : inputUmur,
-      gender : inputGender,
-      tb : inputTB,
-      bb : inputBB,
-      email : inputEmail,
-      password : inputPassword,
-      konfirmasiPassword : inputKonfirmasi,
-    }
+      namaDepan: inputNamaDepan,
+      namaBelakang: inputNamaBelakang,
+      umur: inputUmur,
+      gender: inputGender,
+      tb: inputTB,
+      bb: inputBB,
+      email: inputEmail,
+      password: inputPassword,
+      konfirmasiPassword: inputKonfirmasi,
+    };
 
-    if(inputNamaDepan === '' || inputNamaBelakang === '' || inputUmur === '' || inputGender === '' || inputTB === '' || inputBB === '' || inputEmail === '' || inputPassword === '' || inputKonfirmasi === ''){
-      alert('Please fill out the entire form')
-    }else if(inputKonfirmasi !== inputPassword){
-      alert('Your password does not match')
-    }else{
-      dispatch(addData(newData))
-      setInputNamaDepan("")
-      setInputNamaBelakang("")
-      setInputUmur("")
-      setInputGender("")
-      setInputTB("")
-      setInputBB("")
-      setInputEmail("")
-      setInputPassword("")
-      setInputKonfirmasi("")
-      alert('Register success')
-      navigate('/login')
-    }
+    if (
+      inputNamaDepan === '' ||
+      inputNamaBelakang === '' ||
+      inputUmur === '' ||
+      inputGender === '' ||
+      inputTB === '' ||
+      inputBB === '' ||
+      inputEmail === '' ||
+      inputPassword === '' ||
+      inputKonfirmasi === ''
+    ) {
+      alert('Please fill out the entire form');
+    } else if (inputKonfirmasi !== inputPassword) {
+      alert('Your password does not match');
+    } else {
+      dispatch(addData(newData));
+      setInputNamaDepan('');
+      setInputNamaBelakang('');
+      setInputUmur('');
+      setInputGender('');
+      setInputTB('');
+      setInputBB('');
+      setInputEmail('');
+      setInputPassword('');
+      setInputKonfirmasi('');
 
-  }
+      setShowAlert(true);
+
+      const time = setTimeout(() => {
+        setShowAlert(false);
+        navigate('/login');
+      }, 5000);
+    }
+  };
 
   useEffect(() => {
     dispatch(getDataUser());
@@ -63,6 +77,11 @@ function Register() {
   return (
     <>
       <Container className="my-5">
+        {showAlert && (
+          <div className="d-flex justify-content-end fixed-top my-5 mx-4">
+            <p className="alert">Register success ✅ You will be redirected to login</p>
+          </div>
+        )}
         <Row className="flex-column justify-content-center align-items-center gap-lg-5">
           <h1 className="title-register text-center">Welcome to Calc Health</h1>
           <div className="form-container rounded">
@@ -74,7 +93,7 @@ function Register() {
                   type="text"
                   placeholder=""
                   value={inputNamaDepan}
-                  onChange={(e) => setInputNamaDepan(e.target.value)}
+                  onChange={e => setInputNamaDepan(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-4">
@@ -84,7 +103,7 @@ function Register() {
                   type="text"
                   placeholder=""
                   value={inputNamaBelakang}
-                  onChange={(e) => setInputNamaBelakang(e.target.value)}
+                  onChange={e => setInputNamaBelakang(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-4">
@@ -94,7 +113,7 @@ function Register() {
                   type="number"
                   placeholder=""
                   value={inputUmur}
-                  onChange={(e) => setInputUmur(e.target.value)}
+                  onChange={e => setInputUmur(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-4">
@@ -104,7 +123,7 @@ function Register() {
                   type="text"
                   placeholder=""
                   value={inputGender}
-                  onChange={(e) => setInputGender(e.target.value)}
+                  onChange={e => setInputGender(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-4">
@@ -114,7 +133,7 @@ function Register() {
                   type="number"
                   placeholder=""
                   value={inputTB}
-                  onChange={(e) => setInputTB(e.target.value)}
+                  onChange={e => setInputTB(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-4">
@@ -124,7 +143,7 @@ function Register() {
                   type="number"
                   placeholder=""
                   value={inputBB}
-                  onChange={(e) => setInputBB(e.target.value)}
+                  onChange={e => setInputBB(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-4">
@@ -134,7 +153,7 @@ function Register() {
                   type="email"
                   placeholder=""
                   value={inputEmail}
-                  onChange={(e) => setInputEmail(e.target.value)}
+                  onChange={e => setInputEmail(e.target.value)}
                 />
               </Form.Group>
               <Form.Group className="mb-4">
@@ -145,7 +164,7 @@ function Register() {
                   placeholder=""
                   value={inputPassword}
                   minLength={8}
-                  onChange={(e) => setInputPassword(e.target.value)}
+                  onChange={e => setInputPassword(e.target.value)}
                 />
                 <Form.Text className="mb-4" muted>
                   Minimal 8 karakter
@@ -159,7 +178,7 @@ function Register() {
                   placeholder=""
                   value={inputKonfirmasi}
                   minLength={8}
-                  onChange={(e) => setInputKonfirmasi(e.target.value)}
+                  onChange={e => setInputKonfirmasi(e.target.value)}
                 />
               </Form.Group>
               <div className="daftar d-flex justify-content-center align-items-center my-4">
