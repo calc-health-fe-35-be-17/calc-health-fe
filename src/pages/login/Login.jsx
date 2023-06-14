@@ -4,7 +4,7 @@ import ButtonPrimary from '../../components/button/button-primary';
 import ButtonSecond from '../../components/button/button-second/button';
 import { Col, Container, Row } from 'react-bootstrap';
 import { InputGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { getDataLogin } from '../../redux/login/loginAction';
@@ -14,6 +14,7 @@ function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -51,6 +52,8 @@ function Login() {
       };
 
       dispatch(getDataLogin(userData));
+      alert('Login Success')
+      navigate('/')
     }
 
   };
