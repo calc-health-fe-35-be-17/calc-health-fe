@@ -51,6 +51,7 @@ function Foods(props) {
                   img={food.image}
                   id={food.id}
                   protein={food.nutrition.nutrients[0].amount}
+                  status={food.status}
                 />
               );
             })}

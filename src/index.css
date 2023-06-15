@@ -11,7 +11,17 @@
 
 
 .bg-blue{
+  background-color: var(--young);
+}
+
+.btn-blue{
+  color: white;
+  background-color: var(--young);
+}
+
+.btn-blue:hover{
   background-color: var(--blue);
+  color: white;
 }
 
 .bg-secondary{

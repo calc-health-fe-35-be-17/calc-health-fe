@@ -6,21 +6,23 @@ import ButtonPrimary from '../button/button-primary';
 import './card.css';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { storeFoodtoCart } from '../../redux/cart-food/action';
+import { resetCart, storeToCart } from '../../redux/cart-food/action';
+import { useState } from 'react';
 
 
 export default function CardFood(props) {
-  const { img, title, protein, id } = props;
-
+  const { img, title, protein, id, status } = props;
+  const [loading, setLoading] = useState(false);
   const dispacth = useDispatch()
-  
-  const addToCart = () => {
-    dispacth(storeFoodtoCart({
+
+
+  const addToCart = async () => {
+    setLoading(() => true);
+    await dispacth(storeToCart({
       id: id,
-      name: title,
-      image: img,
-      description: 'lorem ipsum dolor amet'
     }))
+    setLoading(() => false);
+    // }
   }
 
   return (
@@ -32,8 +34,22 @@ export default function CardFood(props) {
         </Card.Title>
         <Card.Text className="mb-4 px-2 calori">Protein: {protein}g</Card.Text>
         <div className="d-flex justify-content-between pb-3 px-3">
-         
-          <ButtonPrimary style={'btn-card'} onClick={addToCart}>Pilih</ButtonPrimary>
+          {loading ? (
+            <ButtonPrimary style={'btn-card'} >
+              <div className="spinner-border text-light" role="status">
+                <span className="sr-only"></span>
+              </div>
+            </ButtonPrimary>
+          ) : status == 'cart' ? (
+            <ButtonPrimary style={'btn-card bg-red'}>
+              Hapus
+            </ButtonPrimary>
+          ) : (
+            <ButtonPrimary style={'btn-card bg-red'} onClick={addToCart}>
+              Pilih
+            </ButtonPrimary>
+          )}
+
           <Link to={`/food/${id}`}>
             <ButtonPrimary style={'btn-card'}>Detail</ButtonPrimary>
           </Link>
