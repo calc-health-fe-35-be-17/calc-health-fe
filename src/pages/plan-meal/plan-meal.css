@@ -1,0 +1,14 @@
+.title-meal-plan {
+  color: var(--young);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.title {
+  color: var(--blue);
+}
+
+.list-food {
+  border: 1px solid var(--young);
+  border-radius: 1rem;
+}
