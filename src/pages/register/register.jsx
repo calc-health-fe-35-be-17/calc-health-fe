@@ -49,6 +49,8 @@ function Register() {
       alert('Please fill out the entire form');
     } else if (inputKonfirmasi !== inputPassword) {
       alert('Your password does not match');
+    } else if(inputGender !== 'pria' && inputGender !== 'wanita'){
+      alert('Your gender is wrong')
     } else {
       dispatch(addData(newData));
       setInputNamaDepan('');
@@ -117,7 +119,7 @@ function Register() {
                 />
               </Form.Group>
               <Form.Group className="mb-4">
-                <Form.Label className="label">Gender</Form.Label>
+                <Form.Label className="label">Gender (pria/wanita)</Form.Label>
                 <Form.Control
                   className="form-input input"
                   type="text"
