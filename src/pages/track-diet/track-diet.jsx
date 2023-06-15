@@ -40,8 +40,8 @@ function TrackDiet() {
         );
       }
     }
-    setWeight('')
-    setHeight('')
+    setWeight('');
+    setHeight('');
   };
 
   let imgsrc;
@@ -106,7 +106,9 @@ function TrackDiet() {
                 <div className="col-lg-8 col-sm-12">
                   <h3 className="score">{output}</h3>
                   <p>{description}</p>
-                  <Link to={'/planmeal'}><ButtonPrimary>Meal Plan</ButtonPrimary></Link>
+                  <Link to={`/planmeal/${output.toLocaleLowerCase()}`}>
+                    <ButtonPrimary>Meal Plan</ButtonPrimary>
+                  </Link>
                 </div>
               </section>
             </div>
