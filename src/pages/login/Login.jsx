@@ -7,6 +7,7 @@ import { InputGroup } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+//import axios from 'axios';
 import { getDataLogin } from '../../redux/login/loginAction';
 
 function Login() {
@@ -41,8 +42,8 @@ function Login() {
     setErrors(newErrors);
     return isValid;
   };
-
-  const handleSubmit = (e) => {
+  
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if(validateForm()) {
@@ -51,9 +52,20 @@ function Login() {
         password: password
       };
 
-      dispatch(getDataLogin(userData));
-      alert('Login Success')
-      navigate('/')
+      try {
+        const response = await dispatch(getDataLogin(userData));
+  
+        if (response.payload.success) {
+          console.log('Login successful');
+          navigate('/');
+        } else {
+          console.error('Login error:', response.payload.message);
+          setErrors({ password: 'Invalid email or password' });
+        }
+      } catch (error) {
+        console.error('Login error:', error);
+        setErrors({ password: 'An error occurred during login' });
+      }
     }
 
   };
