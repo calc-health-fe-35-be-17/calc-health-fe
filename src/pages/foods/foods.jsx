@@ -12,9 +12,20 @@ import Loading from '../../components/loading/loading';
 import CardFood from '../../components/card/card-food';
 
 function Foods(props) {
+
   useEffect(() => {
+    if (props.foodlist.data.length != 0) return
     props.fetchfood();
   }, []);
+
+  const checkIsCartFood = (id) => {
+    const ids = props.cartFood.data.map(value => value.id);
+    if (!ids.includes(id)) {
+      return false
+    }
+
+    return true
+  }
 
   return (
     <Container>
@@ -43,7 +54,7 @@ function Foods(props) {
             }}
           >
             {props.foodlist.data.map((food, i) => {
-              console.log(food);
+
               return (
                 <CardFood
                   key={i}
@@ -52,6 +63,7 @@ function Foods(props) {
                   id={food.id}
                   protein={food.nutrition.nutrients[0].amount}
                   status={food.status}
+                  isCart={checkIsCartFood}
                 />
               );
             })}
@@ -65,6 +77,7 @@ function Foods(props) {
 const mapStateProps = state => {
   return {
     foodlist: state.listFood,
+    cartFood: state.cartFood
   };
 };
 

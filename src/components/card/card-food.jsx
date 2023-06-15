@@ -10,11 +10,13 @@ import { resetCart, storeToCart } from '../../redux/cart-food/action';
 import { useState } from 'react';
 
 
-export default function CardFood(props) {
-  const { img, title, protein, id, status } = props;
+export default function CardFood({ img, title, protein, id, isCart }) {
   const [loading, setLoading] = useState(false);
   const dispacth = useDispatch()
 
+  const deleteToCart = () => {
+    dispacth(resetCart(id))
+  }
 
   const addToCart = async () => {
     setLoading(() => true);
@@ -22,7 +24,6 @@ export default function CardFood(props) {
       id: id,
     }))
     setLoading(() => false);
-    // }
   }
 
   return (
@@ -40,12 +41,12 @@ export default function CardFood(props) {
                 <span className="sr-only"></span>
               </div>
             </ButtonPrimary>
-          ) : status == 'cart' ? (
-            <ButtonPrimary style={'btn-card bg-red'}>
+          ) : isCart(id) ? (
+            <ButtonPrimary style={'btn-delete'} onClick={deleteToCart}>
               Hapus
             </ButtonPrimary>
           ) : (
-            <ButtonPrimary style={'btn-card bg-red'} onClick={addToCart}>
+            <ButtonPrimary style={'btn-card'} onClick={addToCart}>
               Pilih
             </ButtonPrimary>
           )}

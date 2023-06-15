@@ -1,19 +1,21 @@
 import ButtonChoose from "./component/button-choos/button-choose";
 import './cart-food.css'
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import Card from "./component/card/card";
 import { Row } from "react-bootstrap";
 import EmptyCart from "./partials/empty-cart/empty-cart";
-
-// import { connect } from "react-redux";
+import { fetchCart } from "../../redux/cart-food/action";
 
 const CartFood = () => {
     const cartFoods = useSelector(state => state.cartFood);
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log(cartFoods.data)
-    })
+        if (localStorage.getItem('card-food')) {
+            dispatch(fetchCart())
+        }
+    }, [])
 
 
     return (
