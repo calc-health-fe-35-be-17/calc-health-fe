@@ -24,12 +24,12 @@ function Register() {
   const handleSubmit = e => {
     e.preventDefault();
     let newData = {
-      namaDepan: inputNamaDepan,
-      namaBelakang: inputNamaBelakang,
+      nama_depan: inputNamaDepan,
+      nama_belakang: inputNamaBelakang,
       umur: inputUmur,
       gender: inputGender,
-      tb: inputTB,
-      bb: inputBB,
+      tinggi: inputTB,
+      berat: inputBB,
       email: inputEmail,
       password: inputPassword,
       konfirmasiPassword: inputKonfirmasi,
