@@ -5,8 +5,24 @@ import ButtonPrimary from '../button/button-primary';
 // import { foodCard } from './../../fakers';
 import './card.css';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { storeFoodtoCart } from '../../redux/cart-food/action';
+
+
 export default function CardFood(props) {
   const { img, title, protein, id } = props;
+
+  const dispacth = useDispatch()
+  
+  const addToCart = () => {
+    dispacth(storeFoodtoCart({
+      id: id,
+      name: title,
+      image: img,
+      description: 'lorem ipsum dolor amet'
+    }))
+  }
+
   return (
     <Card style={{ width: '14rem' }} className="rounded-0 border-0">
       <Card.Body className="p-0">
@@ -16,7 +32,8 @@ export default function CardFood(props) {
         </Card.Title>
         <Card.Text className="mb-4 px-2 calori">Protein: {protein}g</Card.Text>
         <div className="d-flex justify-content-between pb-3 px-3">
-          <ButtonPrimary style={'btn-card'}>Pilih</ButtonPrimary>
+         
+          <ButtonPrimary style={'btn-card'} onClick={addToCart}>Pilih</ButtonPrimary>
           <Link to={`/food/${id}`}>
             <ButtonPrimary style={'btn-card'}>Detail</ButtonPrimary>
           </Link>
