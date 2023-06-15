@@ -1,4 +1,4 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from './loginAction';
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from './loginAction';
 
 const initialState = {
   loading: false,
@@ -27,6 +27,12 @@ const loginReducer = (state = initialState, action) => {
         loading: false,
         userData: null,
         error: action.payload
+      };
+    case LOGOUT:
+      return {
+        ...state,
+        isLoggedIn: false,
+        userData: {},
       };
     default:
       return state;
