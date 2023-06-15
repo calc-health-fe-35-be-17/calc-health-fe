@@ -20,8 +20,7 @@ export const getDataUser = () => {
     return async (dispatch) => {
         dispatch(startFetching())
 
-        // sementara
-        const url = "https://6453e133c18adbbdfeaa2b38.mockapi.io/api/v1/data-user"
+        const url = "https://calc-health-be.up.railway.app/users"
         const result = await axios(url)
 
         dispatch(successGetData(result.data))
@@ -29,8 +28,7 @@ export const getDataUser = () => {
 }
 
 export const addData = (newData) => async (dispatch) => {
-    // sementara
-    const url = "https://6453e133c18adbbdfeaa2b38.mockapi.io/api/v1/data-user"
+    const url = "https://calc-health-be.up.railway.app/auth/register"
     await axios.post(url, newData)
 
     dispatch(getDataUser())
