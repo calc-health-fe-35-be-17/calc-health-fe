@@ -5,6 +5,7 @@ import { planMeal } from './data';
 import { useParams } from 'react-router';
 import NavBack from '../../components/nav-back/nav-back';
 import { Link } from 'react-router-dom';
+import ButtonPrimary from '../../components/button/button-primary/button';
 
 export default function PlanMeal() {
   const { type } = useParams();
@@ -45,6 +46,17 @@ export default function PlanMeal() {
           })}
         </Accordion>
       </Container>
+      <section className="title-meal-plan my-3 text-end">
+        <p className="fs-6">Lets track your calori and your carbon</p>
+        <div className="d-flex justify-content-end gap-3">
+          <Link to={'/trackcalori'}>
+            <ButtonPrimary>Track Calori</ButtonPrimary>
+          </Link>
+          <Link to={'/trackcarbon'}>
+            <ButtonPrimary>Track Carbon</ButtonPrimary>
+          </Link>
+        </div>
+      </section>
     </Container>
   );
 }
