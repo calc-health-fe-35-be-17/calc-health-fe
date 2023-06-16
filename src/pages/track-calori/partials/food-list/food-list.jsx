@@ -56,11 +56,7 @@ const Wrapper = ({ children }) => {
   return (
     <div className="food-list my-5">
       <div className="food-list__wrapper-empty">{children}</div>
-      <div className="food-list_button-track">
-        <Link to={'/trackcarbon'}>
-          <ButtonPrimary style="btn-track-carbon">Track Carbon</ButtonPrimary>
-        </Link>
-      </div>
+      <div className="food-list_button-track"></div>
     </div>
   );
 };
