@@ -47,9 +47,9 @@ export default function TrackCarbon() {
         </div>
         <div className="tips w-50">
           <p className="text-tips">
-            <span className="tips">Tips: </span>Kurangi makanan yang yang
-            berasal dari hewani karena daging merupakan penyumbang emisi carbon
-            terbesar
+            <span className="tips">Tips: </span>Batas terbaik penghasilan carbon
+            makanan perhari adalah 30 KgCo2. Kurangi makanan yang yang berasal
+            dari hewani karena daging merupakan penyumbang emisi carbon terbesar
           </p>
         </div>
         <FoodList />

@@ -33,7 +33,7 @@ export default function DiagramBox({ caloriesNeed, caloriesAmount }) {
                     Dibutuhkan <br />
                   </div>
                   <span>
-                    <strong>{caloriesNeed}</strong> Kkal
+                    <strong>{caloriesNeed}</strong> Kcal
                   </span>
                 </li>
                 <li>
@@ -42,7 +42,7 @@ export default function DiagramBox({ caloriesNeed, caloriesAmount }) {
                     Terpenuhi <br />
                   </div>
                   <span>
-                    <strong>{caloriesAmount().toFixed(2)}</strong> Kkal
+                    <strong>{caloriesAmount().toFixed(2)}</strong> Kcal
                   </span>
                 </li>
               </ul>

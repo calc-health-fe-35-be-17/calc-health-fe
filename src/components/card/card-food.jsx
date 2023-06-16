@@ -40,8 +40,10 @@ export default function CardFood({ img, title, calori, carbon, id, isCart }) {
         <Card.Title className="food-title fs-6 mt-2" style={{ height: '55px' }}>
           {title}
         </Card.Title>
-        <Card.Text className="mb-4 px-2 calori">Calori: {calori}g</Card.Text>
-        <Card.Text className="mb-4 px-2 carbon">Carbon: {carbon}g</Card.Text>
+        <Card.Text className="mb-4 px-2 calori">Calori: {calori}Kcal</Card.Text>
+        <Card.Text className="mb-4 px-2 carbon">
+          Carbon: {carbon}kgCo2
+        </Card.Text>
         <div className="d-flex justify-content-between pb-3 px-3">
           {loading ? (
             <ButtonPrimary style={'btn-card'}>
