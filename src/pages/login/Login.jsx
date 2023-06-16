@@ -5,69 +5,26 @@ import ButtonSecond from '../../components/button/button-second/button';
 import { Col, Container, Row } from 'react-bootstrap';
 import { InputGroup } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { login } from '../../redux/login/loginAction'
 import { useState } from 'react';
-//import axios from 'axios';
-import { getDataLogin } from '../../redux/login/loginAction';
+import { connect } from 'react-redux';
 
-function Login() {
-  const dispatch = useDispatch();
+
+const Login = ({ login, loading, error }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState({});
-  const navigate = useNavigate();
 
-  const handleEmail = (e) => {
+  const handleEmailChange = e => {
     setEmail(e.target.value);
   };
 
-  const handlePassword = (e) => {
+  const handlePasswordChange = e => {
     setPassword(e.target.value);
   };
 
-  const validateForm = () => {
-    let isValid = true;
-    const newErrors = {};
-
-    if (email.trim() === '') {
-      newErrors.email = 'Email should not be empty';
-      isValid = false;
-    }
-
-    if (password.trim() === '') {
-      newErrors.password = 'Password should not be empty';
-      isValid = false;
-    }
-
-    setErrors(newErrors);
-    return isValid;
-  };
-  
-  const handleSubmit = async (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
-
-    if(validateForm()) {
-      const userData = {
-        email: email,
-        password: password
-      };
-
-      try {
-        const response = await dispatch(getDataLogin(userData));
-  
-        if (response.payload.success) {
-          console.log('Login successful');
-          navigate('/');
-        } else {
-          console.error('Login error:', response.payload.message);
-          setErrors({ password: 'Invalid email or password' });
-        }
-      } catch (error) {
-        console.error('Login error:', error);
-        setErrors({ password: 'An error occurred during login' });
-      }
-    }
-
+    login(email, password);
   };
 
   return (
@@ -82,7 +39,10 @@ function Login() {
               <h4>Login</h4>
               <p className="">Selamat datang di CalcHealth</p>
             </div>
-            <Form className="w-100 d-flex flex-column gap-4" onSubmit={handleSubmit}>
+            <Form
+              className="w-100 d-flex flex-column gap-4"
+              onSubmit={handleSubmit}
+            >
               <Form.Group>
                 <Form.Label>Email</Form.Label>
                 <InputGroup className="mb-3">
@@ -93,10 +53,9 @@ function Login() {
                     aria-describedby="basic-addon1"
                     type="email"
                     value={email}
-                    onChange={handleEmail}
+                    onChange={handleEmailChange}
                   />
                 </InputGroup>
-                {errors.email && <span className="text-danger">{errors.email}</span>}
               </Form.Group>
               <Form.Group>
                 <Form.Label>Password</Form.Label>
@@ -108,11 +67,12 @@ function Login() {
                     aria-describedby="basic-addon1"
                     type="password"
                     value={password}
-                    onChange={handlePassword}
+                    onChange={handlePasswordChange}
                   />
                 </InputGroup>
-                {errors.password && <span className="text-danger">{errors.password}</span>}
               </Form.Group>
+              {loading && <p>loading...</p>}
+              {error && <p>{error}</p>}
               <ButtonPrimary type="submit" style="py-2">
                 Sign In
               </ButtonPrimary>
@@ -132,5 +92,15 @@ function Login() {
       </Row>
     </Container>
   );
+};
+
+const mapStateToProps = (state) => ({
+  loading: state.loading,
+  error: state.error,
+})
+
+const mapDispatchToProps = {
+  login,
 }
-export default Login;
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
