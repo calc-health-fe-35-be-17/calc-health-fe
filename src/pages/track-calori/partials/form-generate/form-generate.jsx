@@ -13,7 +13,7 @@ export default function FormGenerate({ handleSubmit, caloriesNeed }) {
       </h2>
       <Row className="track-calori__row justify-content-between">
         <Col md={6}>
-          <Form className="w-full" onSubmit={handleSubmit}>
+          <Form className="w-full fs-6" onSubmit={handleSubmit}>
             <InputLabel label="Umur" name="age" />
             <InputLabel label="Berat Badan" name="weight" />
             <InputLabel label="Tinggi Badan" name="height" />
@@ -23,10 +23,10 @@ export default function FormGenerate({ handleSubmit, caloriesNeed }) {
               type="select"
               options={['Pria', 'Wanita']}
             />
-            <ButtonPrimary>Generate</ButtonPrimary>
+            <ButtonPrimary style={'mt-4'}>Generate</ButtonPrimary>
           </Form>
         </Col>
-        <Col md={5} className="col-right">
+        <Col md={5} className="col-right mt-5">
           <div className="col-right__wrapper bg-blue">
             <h4>Kalori yang anda butuhkan dalam sehari adalah :</h4>
             <div className="mt-2 w-100 h-50 d-flex justify-content-center align-items-center">
