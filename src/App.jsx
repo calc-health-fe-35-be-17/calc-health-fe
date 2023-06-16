@@ -8,7 +8,8 @@ import Register from './pages/register';
 import TrackCalori from './pages/track-calori';
 import TrackCarbon from './pages/track-carbon';
 import DetailFood from './pages/detail-food/detail-food';
-import PlanMeal from './pages/plan-meal/plan-meal';
+import PlanMeal from './pages/plan-meal/plan-meal'
+import CartFood from './pages/cart-food/cart-food';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
         <Route path="/trackcarbon" element={<TrackCarbon />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/planmeal/:type" element={<PlanMeal />} />
+        <Route path="/planmeal" element={<PlanMeal />} />
+        <Route path="/cartfood" element={<CartFood />} />
       </Routes>
     </Layout>
   );

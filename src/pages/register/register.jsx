@@ -111,7 +111,7 @@ function Register() {
               <Form.Group className="mb-4">
                 <Form.Label className="label">Umur</Form.Label>
                 <Form.Control
-                  className="form-input input"
+                  className="form-input inpufetchfoodt"
                   type="number"
                   placeholder=""
                   value={inputUmur}
