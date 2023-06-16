@@ -1,33 +1,47 @@
-.diagram-box__wrapper{
-    padding: 30px;
+.diagram-box__wrapper {
+  padding: 30px;
 }
 
-.required-calori_title{
-    font-family: 'Nunito';
-    font-style: normal;
-    font-weight: 100;
-    font-size: 20px;
-    width: 200px;
-    display: block;
+.required-calori_title {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 100;
+  font-size: 20px;
+  width: 200px;
+  display: block;
 }
 
-.circle-diagram{
-    background-color: var(--blue);
-    height: 350px;
-    width: 350px;
-    border-radius: 500px;
-    margin: 0 auto;
+.circle-diagram {
+  /* background-color: var(--blue); */
+  height: 350px;
+  width: 350px;
+  border-radius: 500px;
+  margin: 0 auto;
 }
 
-.calculate-calori{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 25px 0;
-    font-weight: 400;
-    font-size: 24px;
+.calculate-calori {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 25px 0;
+  font-weight: 400;
+  font-size: 24px;
 }
 
-.calculate-calori span{
-    color: black;
+.calculate-calori span {
+  color: black;
+}
+
+.dibutuhkan {
+	width: 16px;
+	height: 16px;
+	border-radius: 999px;
+	background-color: rgba(19, 194, 194);
+}
+
+.terpenuhi {
+	width: 16px;
+	height: 16px;
+	border-radius: 999px;
+	background-color: rgba(17, 153, 158);
 }
