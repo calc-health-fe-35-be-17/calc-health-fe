@@ -3,6 +3,7 @@ import EmptyFoodImage from '../../../../assets/empty-food-list.png';
 import './food-list.css';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Col, Row } from 'react-bootstrap';
 
 const EmptyFoodList = ({ parent }) => {
   const Wrapper = parent;
@@ -26,13 +27,25 @@ const FoodListContent = ({ cartFood }) => {
   return (
     <div className="food-list__wrapper my-5">
       <div className="food-list_slide">
-        {cartFood.data.map((value, index) => (
-          <div className="food-content_wrapper" key={index}>
-            <img src={value.image} alt="" />
-            <h1>{value.title}</h1>
-            <p dangerouslySetInnerHTML={{ __html: value.summary }} />
-          </div>
-        ))}
+        <Row>
+          {cartFood.data.map((value, index) => (
+            <Col
+              lg={3}
+              md={6}
+              sm={12}
+              xs={12}
+              className="food-content_wrapper"
+              key={index}
+            >
+              <img
+                src={`https://calc-health-be.up.railway.app/${value.picture}`}
+                alt=""
+              />
+              <h1>{value.name}</h1>
+              <p>{value.description}</p>
+            </Col>
+          ))}
+        </Row>
       </div>
     </div>
   );

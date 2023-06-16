@@ -33,9 +33,9 @@ const CartFood = () => {
         {cartFoods.data.map((item, index) => (
           <Card
             key={index}
-            name={item.title}
-            image={item.image}
-            description={item.summary}
+            name={item.name}
+            image={item.picture}
+            description={item.description}
             id={item.id}
           />
         ))}

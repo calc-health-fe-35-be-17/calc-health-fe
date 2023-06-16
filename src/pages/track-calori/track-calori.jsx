@@ -6,6 +6,8 @@ import FormGenerate from './partials/form-generate/form-generate';
 import './track-calori.css';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import ButtonPrimary from '../../components/button/button-primary/button';
 
 export default function TrackCalori() {
   const [caloriesNeed, setCaloriesNeed] = useState(0);
@@ -13,7 +15,7 @@ export default function TrackCalori() {
 
   const caloriesAmount = () => {
     const result = cartFood.data
-      .map(value => value.nutrition.nutrients[0].amount)
+      .map(value => value.calorie)
       .reduce((a, b) => a + b, 0);
     return result;
   };
@@ -52,6 +54,11 @@ export default function TrackCalori() {
       <FormGenerate handleSubmit={handleSubmit} caloriesNeed={caloriesNeed} />
       <DiagramBox caloriesNeed={caloriesNeed} caloriesAmount={caloriesAmount} />
       <FoodList />
+      <Link to={'/trackcarbon'}>
+        <ButtonPrimary style="btn-track-carbon text-end mb-5">
+          Track Carbon
+        </ButtonPrimary>
+      </Link>
     </div>
   );
 }
