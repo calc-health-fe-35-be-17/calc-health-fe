@@ -16,7 +16,7 @@ export default function Hero() {
             asupan gizi seimbang dari makanan yang mereka konsumsi dan dampak
             dari makanan yang mereka pilih
           </p>
-          <Link to="/register">
+          <Link to="/makanan">
             <ButtonPrimary style={'get-started'}>Get started</ButtonPrimary>
           </Link>
         </Col>
