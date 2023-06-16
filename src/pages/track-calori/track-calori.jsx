@@ -44,7 +44,7 @@ export default function TrackCalori() {
   const navigate = useNavigate();
 
   return (
-    <div className="track-calori__wrapper">
+    <div className="track-calori__wrapper mt-4">
       <button
         style={{ border: 'none', backgroundColor: 'transparent' }}
         onClick={() => navigate(-1)}
