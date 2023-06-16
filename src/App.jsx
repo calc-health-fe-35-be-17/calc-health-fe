@@ -1,34 +1,87 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import Layout from './layouts/layout';
+import LandingPage from './pages/landing-page/landing-page';
+import Foods from './pages/foods/foods';
+import TrackDiet from './pages/track-diet/track-diet';
+import Login from './pages/login';
+import Register from './pages/register';
+import TrackCalori from './pages/track-calori';
+import TrackCarbon from './pages/track-carbon';
+import DetailFood from './pages/detail-food/detail-food';
+import PlanMeal from './pages/plan-meal/plan-meal';
+import CartFood from './pages/cart-food/cart-food';
+import Protected from './middleware/protected';
+import { useDispatch, useSelector } from 'react-redux';
+import NotLogin from './middleware/not-login';
+import { useEffect } from 'react';
+import { checkLogin } from './redux/login/loginAction';
+import { fetchCart } from './redux/cart-food/action';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const loginReducer = useSelector(state => state.loginReducer);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(checkLogin());
+    dispatch(fetchCart());
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount(count => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/makanan"
+          element={
+            <NotLogin isLogin={loginReducer.user}>
+              <Foods />
+            </NotLogin>
+          }
+        />
+        <Route
+          path="/food/:id"
+          element={
+            <NotLogin isLogin={loginReducer.user}>
+              <DetailFood />
+            </NotLogin>
+          }
+        />
+        <Route
+          path="/trackdiet"
+          element={
+            <NotLogin isLogin={loginReducer.user}>
+              <TrackDiet />
+            </NotLogin>
+          }
+        />
+        <Route
+          path="/trackcalori"
+          element={
+            <NotLogin isLogin={loginReducer.user}>
+              <TrackCalori />
+            </NotLogin>
+          }
+        />
+        <Route
+          path="/trackcarbon"
+          element={
+            <NotLogin isLogin={loginReducer.user}>
+              <TrackCarbon />
+            </NotLogin>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <Protected isLogin={loginReducer.user}>
+              <Login />
+            </Protected>
+          }
+        />
+        <Route path="/register" element={<Register />} />
+        <Route path="/planmeal/:type" element={<PlanMeal />} />
+        <Route path="/cartfood" element={<CartFood />} />
+      </Routes>
+    </Layout>
   );
 }
 

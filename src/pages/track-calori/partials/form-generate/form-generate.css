@@ -1,0 +1,49 @@
+.track-calori__title {
+  text-align: center;
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 44px;
+}
+
+.track-calori__row {
+  margin-top: 10px;
+}
+
+.col-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.col-right__wrapper {
+  border-radius: 10px;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  max-width: 374px;
+  min-height: 274px;
+}
+
+.col-right__wrapper h4 {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .track-calori__title {
+    font-size: 1.5rem;
+  }
+  .calculate-calori {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    font-size: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,29 @@
+.input__wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.input__wrapper label{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.input__wrapper input{
+    /* max-width: 642px; */
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    /* outline: var(--blue); */
+    border: 1px solid var(--blue);;
+}
+
+.input__wrapper select{
+    /* max-width: 642px; */
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    /* outline: var(--blue); */
+    border: 1px solid var(--blue);;
+}

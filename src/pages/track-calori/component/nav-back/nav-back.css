@@ -1,0 +1,22 @@
+.d-flex{
+    display: flex;
+}
+
+
+.btn-back{
+    align-items: center;
+    color: #13c2c2;
+    cursor: pointer;
+    transition: all ease 500ms;
+}
+
+.btn-back span{
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.btn-back:hover{
+    color: #189999;
+    scale: 0.95;
+}

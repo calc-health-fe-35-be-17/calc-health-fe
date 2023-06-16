@@ -1,0 +1,36 @@
+.food-title {
+  font-family: 'Poppins', sans-serif;
+  color: #006d75;
+  font-weight: 600;
+  text-align: center;
+}
+
+.calori {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  margin: 0;
+  color: #11999e;
+}
+
+.carbon {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #11999e;
+}
+
+.btn-card {
+  background-color: #40514E;
+  border-color: #40514E;
+  padding: 2px 15px !important;
+}
+
+.btn-delete {
+  background-color: #c83333;
+  border-color: #c83333;
+  padding: 2px 15px !important;
+}
+.btn-delete:hover{
+  background-color: #d16262;
+}

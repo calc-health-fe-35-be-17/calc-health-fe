@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap');
+
+.alert{
+    /* border: 5px solid #CFFDE1; */
+    background-color: #CFFDE1;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.title-register{
+    color: #006D75;
+    font-weight: 700;
+    font-size: 2.6rem;
+}
+
+.form-container {
+    background: #ffffff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    padding: 50px 50px;
+    width: 60%;
+}
+
+.label{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: #11999E;
+}
+
+.form-input{
+    background: #FFFFFF;
+    border: 1px solid #11999E;
+    border-radius: 8px;
+}
+
+.daftar{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+    .form-container {
+        margin-top: 10px;
+        width: 90%;
+        padding: 3rem 1.5rem;
+    }
+    .check {
+        width: 100%;
+    }
+
+}
