@@ -32,12 +32,14 @@ export default function TrackCarbon() {
         </p>
         <div className="box-carbon-calculate w-100 d-flex flex-column gap-5 justify-content-center align-items-center py-5 rounded-4">
           <ProgressBar
-            now={carbonAmount()}
+            min={0}
+            max={20}
+            now={carbonAmount().toFixed(2)}
             variant={'success'}
             className="carbon-food-bar w-25"
           />
           <h2 className="carbon-food-text">
-            {carbonAmount()}
+            {carbonAmount().toFixed(2)}
             <span className="unit">
               KgCO<span className="unit_2">2</span>
             </span>

@@ -1,29 +1,9 @@
 import { Col, Row } from 'react-bootstrap';
 import './diagram-box.css';
-// import CompositionDiagram from '../../component/composition-diagram/composition-diagram';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 export default function DiagramBox({ caloriesNeed, caloriesAmount }) {
-  // const composition = [
-  //     {
-  //         name: 'Karbohidrat',
-  //         count: 0,
-  //     },
-  //     {
-  //         name: 'Protein',
-  //         count: 0,
-  //     },
-  //     {
-  //         name: 'Lemak',
-  //         count: 0,
-  //     },
-  //     {
-  //         name: 'Karbondioksida',
-  //         count: 0,
-  //     }
-  // ]
-
   return (
     <div className="diagram-box__wrapper">
       <Row className="justify-content-between">
@@ -36,7 +16,7 @@ export default function DiagramBox({ caloriesNeed, caloriesAmount }) {
                   minValue={0}
                   maxValue={caloriesNeed}
                   value={caloriesAmount()}
-                  text={`${caloriesAmount()}`}
+                  text={`${caloriesAmount().toFixed(2)}`}
                   styles={buildStyles({
                     pathColor: `rgba(17, 153, 158)`,
                     textColor: '#f88',
@@ -62,16 +42,13 @@ export default function DiagramBox({ caloriesNeed, caloriesAmount }) {
                     Terpenuhi <br />
                   </div>
                   <span>
-                    <strong>{caloriesAmount()}</strong> Kkal
+                    <strong>{caloriesAmount().toFixed(2)}</strong> Kkal
                   </span>
                 </li>
               </ul>
             </Col>
           </Row>
         </Col>
-        {/* <Col md={3}>
-                    {composition.map((item, index) => <CompositionDiagram key={index} name={item.name} count={item.count} />)}
-                </Col> */}
       </Row>
     </div>
   );
