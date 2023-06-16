@@ -10,18 +10,47 @@ import TrackCarbon from './pages/track-carbon';
 import DetailFood from './pages/detail-food/detail-food';
 import PlanMeal from './pages/plan-meal/plan-meal'
 import CartFood from './pages/cart-food/cart-food';
+import Protected from './middleware/protected';
+import { useSelector } from 'react-redux';
+import NotLogin from './middleware/not-login';
 
 function App() {
+  const loginReducer = useSelector(state => state.loginReducer);
+
   return (
     <Layout>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/makanan" element={<Foods />} />
-        <Route path="/food/:id" element={<DetailFood />} />
-        <Route path="/trackdiet" element={<TrackDiet />} />
-        <Route path="/trackcalori" element={<TrackCalori />} />
-        <Route path="/trackcarbon" element={<TrackCarbon />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/makanan" element={
+          <NotLogin isLogin={loginReducer.user}>
+            <Foods />
+          </NotLogin>
+        } />
+        <Route path="/food/:id" element={
+          <NotLogin isLogin={loginReducer.user}>
+            <DetailFood />
+          </NotLogin>
+        } />
+        <Route path="/trackdiet" element={
+          <NotLogin isLogin={loginReducer.user}>
+            <TrackDiet />
+          </NotLogin>
+        } />
+        <Route path="/trackcalori" element={
+          <NotLogin isLogin={loginReducer.user}>
+            <TrackCalori />
+          </NotLogin>
+        } />
+        <Route path="/trackcarbon" element={
+          <NotLogin isLogin={loginReducer.user}>
+            <TrackCarbon />
+          </NotLogin>
+        } />
+        <Route path="/login" element={
+          <Protected isLogin={loginReducer.user}>
+            <Login />
+          </Protected>
+        } />
         <Route path="/register" element={<Register />} />
         <Route path="/planmeal" element={<PlanMeal />} />
         <Route path="/cartfood" element={<CartFood />} />

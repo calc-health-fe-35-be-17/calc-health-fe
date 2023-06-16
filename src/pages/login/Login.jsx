@@ -4,15 +4,17 @@ import ButtonPrimary from '../../components/button/button-primary';
 import ButtonSecond from '../../components/button/button-second/button';
 import { Col, Container, Row } from 'react-bootstrap';
 import { InputGroup } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { login } from '../../redux/login/loginAction'
 import { useState } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 
-const Login = ({ login, loading, error }) => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const loginReducer = useSelector(state => state.loginReducer);
+  const dispatch = useDispatch();
 
   const handleEmailChange = e => {
     setEmail(e.target.value);
@@ -24,7 +26,7 @@ const Login = ({ login, loading, error }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    login(email, password);
+    dispatch(login(email, password));
   };
 
   return (
@@ -71,8 +73,8 @@ const Login = ({ login, loading, error }) => {
                   />
                 </InputGroup>
               </Form.Group>
-              {loading && <p>loading...</p>}
-              {error && <p>{error}</p>}
+              {loginReducer.loading && <p>loading...</p>}
+              {loginReducer.error && <p>{loginReducer.error}</p>}
               <ButtonPrimary type="submit" style="py-2">
                 Sign In
               </ButtonPrimary>
@@ -94,13 +96,13 @@ const Login = ({ login, loading, error }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  loading: state.loading,
-  error: state.error,
-})
+// const mapStateToProps = (state) => ({
+//   loading: state.loading,
+//   error: state.error,
+// })
 
-const mapDispatchToProps = {
-  login,
-}
+// const mapDispatchToProps = {
+//   login,
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default Login

@@ -3,8 +3,17 @@ import { Link } from 'react-router-dom';
 import ButtonSecond from '../button/button-second/button';
 import ButtonPrimary from '../button/button-primary';
 import './navbar.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutAction } from '../../redux/login/loginAction';
 
 export default function NavigationBar() {
+  const user = useSelector(state => state.loginReducer);
+  const dispatch = useDispatch();
+
+  const logOut = () => {
+    dispatch(logoutAction())
+  }
+
   return (
     <Navbar collapseOnSelect expand="sm" className="p-0">
       <Container fluid>
@@ -35,12 +44,21 @@ export default function NavigationBar() {
             <NavLink eventKey="5" as={Link} to="/trackcarbon">
               Track Carbon
             </NavLink>
-            <NavLink eventKey="6" as={Link} to="/login">
-              <ButtonSecond style="btn-login">Sign In</ButtonSecond>
-            </NavLink>
-            <NavLink eventKey="7" as={Link} to="/register">
-              <ButtonPrimary style="btn-register">Sign Up</ButtonPrimary>
-            </NavLink>
+            {
+              !user.user ?
+                <>
+                  <NavLink eventKey="6" as={Link} to="/login">
+                    <ButtonSecond style="btn-login">Sign In</ButtonSecond>
+                  </NavLink>
+                  <NavLink eventKey="7" as={Link} to="/register">
+                    <ButtonPrimary style="btn-register">Sign Up</ButtonPrimary>
+                  </NavLink>
+                </> :
+                <>
+                  <ButtonPrimary style="btn-register" onClick={logOut}>Log out</ButtonPrimary>
+                </>
+            }
+
           </Nav>
         </Navbar.Collapse>
       </Container>
