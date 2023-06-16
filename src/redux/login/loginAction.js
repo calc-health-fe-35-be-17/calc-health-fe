@@ -49,6 +49,16 @@ export const login = (email, password) => {
   };
 };
 
+export const checkLogin = () => {
+  return dispatch => {
+    const user = localStorage.getItem('token');
+    if (user) {
+      dispatch(loginSuccess(user));
+      return;
+    }
+    dispatch(loginSuccess(null));
+  };
+};
 export const logoutAction = () => {
   return dispatch => {
     localStorage.removeItem('token');

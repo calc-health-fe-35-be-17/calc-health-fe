@@ -1,8 +1,8 @@
-import { Navigate } from "react-router-dom";
+import { Navigate } from 'react-router-dom';
 const NotLogin = ({ isLogin, children }) => {
-
-  if (!isLogin) {
-    return <Navigate to="/login" replace />;
+  if (!isLogin && !localStorage.getItem('token')) {
+    console.log(!isLogin);
+    return <Navigate to="/login" />;
   }
 
   return children;

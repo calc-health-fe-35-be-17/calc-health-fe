@@ -48,6 +48,9 @@ export const storeToCart = ({ id }) => {
 
 export const fetchCart = () => {
   return dispatch => {
+    if (!localStorage.getItem('cart-food')) {
+      return;
+    }
     dispatch(fetchToCart());
   };
 };

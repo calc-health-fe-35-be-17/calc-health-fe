@@ -17,15 +17,19 @@ export const cartFoodReducer = (state = initialstate, action) => {
         length: JSON.parse(localStorage.getItem('cart-food')).length,
       };
     case STORE_FOOD_TO_CART:
-      // localStorage.setItem(
-      //   'cart-food',
-      //   JSON.stringify([...state.data, action.payload])
-      // );
+      localStorage.setItem(
+        'cart-food',
+        JSON.stringify([...state.data, action.payload])
+      );
       return {
         data: [...state.data, action.payload],
         length: length + 1,
       };
     case RESET_FOOD_AT_CART:
+      localStorage.setItem(
+        'cart-food',
+        JSON.stringify(state.data.filter(value => value.id != action.payload))
+      );
       return {
         data: state.data.filter(value => value.id != action.payload),
       };
