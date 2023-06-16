@@ -6,60 +6,41 @@ export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const LOGOUT = 'LOGOUT';
 
 export const loginRequest = () => ({
-    type: LOGIN_REQUEST
+    type: LOGIN_REQUEST,
   });
   
-  export const loginSuccess = (userData) => ({
+  export const loginSuccess = (user) => ({
     type: LOGIN_SUCCESS,
-    payload: userData
+    payload: user,
   });
   
   export const loginFailure = (error) => ({
     type: LOGIN_FAILURE,
-    payload: error
+    payload: error,
   });
 
-  export const logoutUser = () => ({
-    type: LOGOUT,
-  });
+  export const login = (email, password) => {
+    return async (dispatch) => {
+      dispatch(loginRequest())
 
-  export const getDataLogin = (userData) => async (dispatch) => {
-    dispatch(loginRequest());
-    try {
-      const response = await axios.post('http://calc-health-be.up.railway.app/auth/login', {
-        email: userData.email,
-        password: userData.password
-      });
-  
-      console.log(response.data);
-      
-      // Dispatch action loginSuccess dengan payload data pengguna
-      dispatch(loginSuccess(response.data));
-      // Mengembalikan respons dengan properti payload
-      return { success: true, payload: response.data };
-    } catch (error) {
-      console.error(error);
-  
-      // Dispatch action loginFailure dengan payload error
-      dispatch(loginFailure(error.message));
+      try{
+        const response = await fetch('https://calc-health-be.up.railway.app/auth/login', {
+          method: 'POST',
+          body: JSON.stringify({email, password}),
+          headers: {
+            'Content-Type' : 'application/json',
+          },
+        })
 
-      // Mengembalikan respons dengan properti payload
-      return { success: false, payload: error.message };
+        if(response.ok){
+          const user = await response.json()
+          dispatch(loginSuccess(user))
+        }else{
+          const error = await response.json()
+          dispatch(loginFailure(error))
+        }
+      }catch(error){
+        dispatch(loginFailure(error.message))
+      }
     }
-  };
-  // export const getDataLogin = (userData) => {
-  //   return (dispatch) => {
-  //     dispatch(loginRequest());
-  
-  //     axios.post('http://calc-health-be.up.railway.app/auth/login', userData)
-  //       .then(response => {
-  //         const userData = response.data;
-  
-  //         dispatch(loginSuccess(userData));
-  //       })
-  //       .catch(error => {
-  //         dispatch(loginFailure(error.message));
-  //         console.error("Error during login:", error);
-  //       });
-  //   };
-  // };
+  }

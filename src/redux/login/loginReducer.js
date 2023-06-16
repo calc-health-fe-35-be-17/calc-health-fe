@@ -1,9 +1,9 @@
-import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE, LOGOUT } from './loginAction';
+import { LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE } from './loginAction';
 
 const initialState = {
+  user: null,
   loading: false,
-  userData: null,
-  error: null
+  error: null,
 };
 
 const loginReducer = (state = initialState, action) => {
@@ -18,21 +18,13 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        userData: action.payload,
-        error: null
+        user: action.payload,
       };
     case LOGIN_FAILURE:
       return {
         ...state,
         loading: false,
-        userData: null,
-        error: action.payload
-      };
-    case LOGOUT:
-      return {
-        ...state,
-        isLoggedIn: false,
-        userData: {},
+        error: action.payload,
       };
     default:
       return state;
@@ -40,29 +32,3 @@ const loginReducer = (state = initialState, action) => {
 };
 
 export default loginReducer;
-
-
-// import { FETCHING, GET_DATA } from "./loginAction"
-
-// const initialState = {
-//     user : [],
-//     isLoading : false
-// }
-
-// const loginReducer = (state = initialState, action) => {
-//     switch(action.type){
-//         case FETCHING :
-//             return{
-//                 ...state,
-//                 isLoading : true
-//             }
-//         case GET_DATA :
-//             return{
-//                 isLoading : false,
-//                 user : [...action.payload]
-//             }
-//         default: return state
-//     }
-// }
-
-// export default loginReducer
