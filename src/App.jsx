@@ -78,7 +78,7 @@ function App() {
           }
         />
         <Route path="/register" element={<Register />} />
-        <Route path="/planmeal" element={<PlanMeal />} />
+        <Route path="/planmeal/:type" element={<PlanMeal />} />
         <Route path="/cartfood" element={<CartFood />} />
       </Routes>
     </Layout>
