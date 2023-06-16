@@ -12,8 +12,6 @@
 }
 
 .circle-diagram {
-  /* background-color: var(--blue); */
-  height: 350px;
   width: 350px;
   border-radius: 500px;
   margin: 0 auto;
@@ -44,4 +42,20 @@
 	height: 16px;
 	border-radius: 999px;
 	background-color: rgba(17, 153, 158);
+}
+
+@media only screen and (max-width: 600px) {
+	.circle-diagram {
+		width: 80%;
+	}
+	.calculate-calori {
+		margin-top: 10px;
+		display: flex;
+		flex-direction: row;
+		font-size: 1rem;
+		justify-content: space-between;
+		align-items: center;
+		text-align: center;
+		gap: 10px;
+	}
 }
