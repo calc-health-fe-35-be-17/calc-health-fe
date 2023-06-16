@@ -18,3 +18,12 @@
     /* outline: var(--blue); */
     border: 1px solid var(--blue);;
 }
+
+.input__wrapper select{
+    /* max-width: 642px; */
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 8px;
+    /* outline: var(--blue); */
+    border: 1px solid var(--blue);;
+}
