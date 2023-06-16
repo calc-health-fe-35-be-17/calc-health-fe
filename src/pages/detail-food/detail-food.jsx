@@ -7,7 +7,6 @@ import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router';
 import Loading from '../../components/loading/loading';
 import Nutrition from '../../components/nutrition/nutrition';
-import ButtonPrimary from '../../components/button/button-primary/button';
 import NavBack from '../../components/nav-back/nav-back';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
@@ -15,10 +14,10 @@ import './detail-food.css';
 
 function DetailFood(props) {
   const id = useParams();
+  const navigate = useNavigate();
   useEffect(() => {
     props.fetchdetailfood(id);
   }, []);
-  const navigate = useNavigate();
 
   return (
     <Container>
@@ -133,9 +132,6 @@ function DetailFood(props) {
                       })}
                     />
                   </div>
-                  <ButtonPrimary style={'button-save mt-4'}>
-                    Save Food
-                  </ButtonPrimary>
                 </Stack>
               </Stack>
             </Row>

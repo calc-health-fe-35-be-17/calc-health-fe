@@ -5,6 +5,7 @@ import FoodList from './partials/food-list/food-list';
 import FormGenerate from './partials/form-generate/form-generate';
 import './track-calori.css';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export default function TrackCalori() {
   const [caloriesNeed, setCaloriesNeed] = useState(0);
@@ -38,9 +39,16 @@ export default function TrackCalori() {
     setCaloriesNeed(() => bmr.toFixed(2));
   };
 
+  const navigate = useNavigate();
+
   return (
     <div className="track-calori__wrapper">
-      <NavBack />
+      <button
+        style={{ border: 'none', backgroundColor: 'transparent' }}
+        onClick={() => navigate(-1)}
+      >
+        <NavBack />
+      </button>
       <FormGenerate handleSubmit={handleSubmit} caloriesNeed={caloriesNeed} />
       <DiagramBox caloriesNeed={caloriesNeed} caloriesAmount={caloriesAmount} />
       <FoodList />
