@@ -6,18 +6,18 @@ import { BsBag } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import ButtonSecond from '../../components/button/button-second';
 import { fetchFoods } from '../../redux/foods/action';
-import { connect } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Loading from '../../components/loading/loading';
 import CardFood from '../../components/card/card-food';
 
 function Foods(props) {
+  const lengthCart = useSelector(state => state.cartFood);
   useEffect(() => {
     if (props.foodlist.data != 0) return;
     props.fetchfood();
   }, []);
 
-  console.log(props.foodlist.data);
   const checkIsCartFood = id => {
     const ids = props.cartFood.data.map(value => value.id);
     if (!ids.includes(id)) {
@@ -38,6 +38,7 @@ function Foods(props) {
         <Link to={'/cartfood'}>
           <ButtonSecond style="border-0 p-1">
             <BsBag size={30} />
+            <span>{lengthCart.length}</span>
           </ButtonSecond>
         </Link>
       </div>

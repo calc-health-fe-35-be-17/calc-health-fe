@@ -1,3 +1,4 @@
+/* eslint-disable no-case-declarations */
 import {
   FETCH_FOOD_AT_CART,
   RESET_FOOD_AT_CART,
@@ -23,15 +24,14 @@ export const cartFoodReducer = (state = initialstate, action) => {
       );
       return {
         data: [...state.data, action.payload],
-        length: length + 1,
+        length: state.length + 1,
       };
     case RESET_FOOD_AT_CART:
-      localStorage.setItem(
-        'cart-food',
-        JSON.stringify(state.data.filter(value => value.id != action.payload))
-      );
+      const newData = state.data.filter(value => value.id != action.payload);
+      localStorage.setItem('cart-food', JSON.stringify(newData));
       return {
-        data: state.data.filter(value => value.id != action.payload),
+        data: newData,
+        length: newData.length,
       };
     default:
       return state;
